@@ -1,0 +1,58 @@
+name: Promosi
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: promo/check
+    metadata:
+      custom: []
+      groupName: Promosi
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Cek Kode Promo'
+      description: 'Memvalidasi ketersediaan dan nilai potongan harga dari kode promo.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      code:
+        custom: []
+        name: code
+        description: 'Kode promo.'
+        required: true
+        example: GARUDA10
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      code: GARUDA10
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "valid": true,
+            "label": "Diskon 10%",
+            "discount_type": "percentage",
+            "discount": 10
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

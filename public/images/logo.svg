@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Definitions for Gradients and Filters -->
+  <defs>
+    <!-- Quiet Luxury Deep Burgundy to Sleek Charcoal Gradient -->
+    <linearGradient id="premiumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B1E5B" />
+      <stop offset="100%" stop-color="#1F212B" />
+    </linearGradient>
+    <!-- Comfort Glow Accent Gradient -->
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B1E5B" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.9" />
+    </linearGradient>
+    <!-- Soft Premium Shadow Filter -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#1F212B" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <!-- Shield Outline: Represents strict security, safety, and trustworthiness -->
+    <path d="M50,12 C62,12 78,16 80,26 C82,46 72,72 50,88 C28,72 18,46 20,26 C22,16 38,12 50,12 Z" 
+          fill="none" 
+          stroke="url(#premiumGrad)" 
+          stroke-width="3" 
+          stroke-linecap="round"/>
+
+    <!-- Wing/Aircraft Silhouette in Soaring Motion: Depicts travel, speed, and aviation -->
+    <path d="M50,30 L66,54 L52,48 L50,78 L48,48 L34,54 Z" 
+          fill="url(#premiumGrad)"/>
+
+    <!-- Inner Comfort Orbit Line: Represents comfort, seamless booking experience, and user-centricity -->
+    <path d="M30,35 C38,25 62,25 70,35" 
+          fill="none" 
+          stroke="url(#goldGlow)" 
+          stroke-width="2.5" 
+          stroke-linecap="round" 
+          stroke-dasharray="1 4"/>
+  </g>
+</svg>

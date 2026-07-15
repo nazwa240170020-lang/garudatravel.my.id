@@ -1,0 +1,1245 @@
+name: Autentikasi
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: register
+    metadata:
+      custom: []
+      groupName: Autentikasi
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Halaman Registrasi'
+      description: 'Menampilkan halaman formulir pendaftaran pengguna baru.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |
+          <!DOCTYPE html>
+          <html lang="en">
+              <head>
+                  <meta charset="utf-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                  <meta name="csrf-token" content="s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE">
+
+                  <title>Garuda</title>
+                  <link rel="icon" type="image/svg+xml" href="http://127.0.0.1:8000/images/logo.svg">
+
+                  <link rel="preconnect" href="https://fonts.googleapis.com">
+                  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+                  <link rel="preload" as="style" href="http://127.0.0.1:8000/build/assets/app-CNV64zgk.css" /><link rel="stylesheet" href="http://127.0.0.1:8000/build/assets/app-CNV64zgk.css" data-navigate-track="reload" />                    <link rel="modulepreload" as="script" href="http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js" /><script type="module" src="http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js" data-navigate-track="reload"></script>                
+                  <style>[x-cloak] { display: none !important; }</style>
+              </head>
+              <body
+                  class="bg-cover bg-center bg-fixed bg-no-repeat"
+                  style="background-image: url('http://127.0.0.1:8000/images/WhatsApp Image 2026-06-14 at 16.52.35.webp');">
+                      
+                      
+                      <main>
+                          <div class="min-h-screen flex items-center justify-center px-4 py-8">
+              <div class="card p-8 max-w-sm w-full">
+
+                  
+                  <div class="text-center mb-6">
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mx-auto text-primary">
+                          <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                      </svg>
+                      <h1 class="font-display text-headline-md text-primary mt-2">Garuda</h1>
+                  </div>
+
+                  
+                  <h2 class="font-display text-headline-sm text-primary mb-1">Buat Akun Baru</h2>
+                  <p class="text-body-sm text-tertiary mb-6">Daftar sekarang dan mulai pesan tiket penerbangan</p>
+
+                  <form method="POST" action="http://127.0.0.1:8000/register">
+                      <input type="hidden" name="_token" value="s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE" autocomplete="off">
+                      
+                      <div class="mb-4">
+                          <label for="name" class="text-label-sm text-tertiary mb-1 block">Nama Lengkap</label>
+                          <div class="relative">
+                              <input id="name" type="text" name="name" value="" required autofocus autocomplete="name" placeholder="Nama lengkap"
+                                  class="input-field  pl-10">
+                              <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                                  <circle cx="12" cy="7" r="4"/>
+                              </svg>
+                          </div>
+                                      </div>
+
+                      
+                      <div class="mb-4">
+                          <label for="email" class="text-label-sm text-tertiary mb-1 block">Email</label>
+                          <div class="relative">
+                              <input id="email" type="email" name="email" value="" required autocomplete="username" placeholder="contoh@email.com"
+                                  class="input-field  pl-10">
+                              <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                  <path d="M22 7l-10 7L2 7"/>
+                              </svg>
+                          </div>
+                                      </div>
+
+                      
+                      <div class="mb-4">
+                          <label for="password" class="text-label-sm text-tertiary mb-1 block">Kata Sandi</label>
+                          <div class="relative">
+                              <input id="password" type="password" name="password" required autocomplete="new-password" placeholder="Buat kata sandi"
+                                  class="input-field  pl-10">
+                              <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                  <path d="M7 11V7a5 5 0 0110 0v4"/>
+                              </svg>
+                          </div>
+                                      </div>
+
+                      
+                      <div class="mb-6">
+                          <label for="password_confirmation" class="text-label-sm text-tertiary mb-1 block">Konfirmasi Kata Sandi</label>
+                          <div class="relative">
+                              <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="Ulangi kata sandi"
+                                  class="input-field  pl-10">
+                              <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                  <path d="M7 11V7a5 5 0 0110 0v4"/>
+                              </svg>
+                          </div>
+                                      </div>
+
+                      
+                      <button type="submit" class="btn-primary w-full">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M5 13l4 4L19 7"/>
+                          </svg>
+                          Daftar
+                      </button>
+                  </form>
+
+                  
+                  <p class="text-center mt-4 text-body-sm text-tertiary">
+                      Sudah punya akun? <a href="http://127.0.0.1:8000/login" class="text-nav-link text-primary hover:text-secondary transition-colors">Masuk di sini</a>
+                  </p>
+
+              </div>
+          </div>
+                      </main>
+                  </div>
+
+                  <!-- Global Toast Notifications Container -->
+                  <div id="globalToastContainer" class="fixed top-5 right-5 z-[100] flex flex-col gap-3 w-full max-w-sm pointer-events-none"></div>
+
+                  <!-- Global Confirmation Modal Container -->
+                  <div 
+                      id="globalConfirmModal" 
+                      class="fixed inset-0 z-[150] hidden items-center justify-center overflow-y-auto"
+                  >
+                      <!-- Overlay -->
+                      <div 
+                          onclick="window.closeGlobalConfirm()" 
+                          class="fixed inset-0 bg-black/60 backdrop-blur-sm"
+                      ></div>
+
+                      <!-- Modal Content -->
+                      <div class="relative bg-surface rounded-2xl max-w-md w-full mx-4 p-6 shadow-2xl border border-border/80 z-10 space-y-6">
+                          <div class="flex items-start gap-4">
+                              <!-- Alert Warning Icon -->
+                              <div class="shrink-0 w-10 h-10 rounded-full bg-rose-50 dark:bg-rose-950/30 flex items-center justify-center text-rose-600 dark:text-rose-400">
+                                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                              </div>
+                              <div class="space-y-1">
+                                  <h3 id="globalConfirmTitle" class="font-display text-headline-sm text-primary">Konfirmasi</h3>
+                                  <p id="globalConfirmMessage" class="text-body-md text-tertiary">Apakah Anda yakin?</p>
+                              </div>
+                          </div>
+
+                          <div class="flex justify-end gap-3">
+                              <button 
+                                  onclick="window.closeGlobalConfirm()"
+                                  class="px-5 py-2.5 rounded-full border border-border text-on-surface hover:bg-neutral transition-colors text-label-lg font-semibold"
+                              >
+                                  Batal
+                              </button>
+                              <button 
+                                  id="globalConfirmBtn"
+                                  class="px-5 py-2.5 rounded-full bg-rose-600 hover:bg-rose-700 text-surface transition-colors text-label-lg font-semibold"
+                              >
+                                  Ya, Batalkan
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+
+                  <script>
+                      // Global Toast Notification function
+                      window.showNotification = function(type, message) {
+                          const container = document.getElementById('globalToastContainer');
+                          if (!container) return;
+                          const id = Date.now();
+                          
+                          let bgClass = '';
+                          let iconSvg = '';
+                          let progressBg = '';
+                          
+                          if (type === 'success') {
+                              bgClass = 'bg-emerald-50/95 border-emerald-200 text-emerald-800 dark:bg-emerald-950/95 dark:border-emerald-800 dark:text-emerald-200';
+                              iconSvg = '<svg class="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
+                              progressBg = 'bg-emerald-500';
+                          } else if (type === 'error' || type === 'danger') {
+                              bgClass = 'bg-rose-50/95 border-rose-200 text-rose-800 dark:bg-rose-950/95 dark:border-rose-800 dark:text-rose-200';
+                              iconSvg = '<svg class="w-5 h-5 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>';
+                              progressBg = 'bg-rose-500';
+                          } else if (type === 'warning') {
+                              bgClass = 'bg-amber-50/95 border-amber-200 text-amber-800 dark:bg-amber-950/95 dark:border-amber-800 dark:text-amber-200';
+                              iconSvg = '<svg class="w-5 h-5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>';
+                              progressBg = 'bg-amber-500';
+                          } else {
+                              bgClass = 'bg-sky-50/95 border-sky-200 text-sky-800 dark:bg-sky-950/95 dark:border-sky-800 dark:text-sky-200';
+                              iconSvg = '<svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
+                              progressBg = 'bg-sky-500';
+                          }
+
+                          const toast = document.createElement('div');
+                          toast.id = `toast-${id}`;
+                          toast.className = `relative flex gap-3 p-4 rounded-xl border shadow-lg backdrop-blur-md pointer-events-auto overflow-hidden transition-all duration-300 transform translate-x-full opacity-0 ${bgClass}`;
+                          toast.innerHTML = `
+                              <div class="shrink-0">${iconSvg}</div>
+                              <div class="flex-1">
+                                  <p class="text-sm font-semibold leading-5">${message}</p>
+                              </div>
+                              <button onclick="document.getElementById('toast-${id}').remove()" class="shrink-0 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+                                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                              </button>
+                              <div class="absolute bottom-0 left-0 h-1 ${progressBg}" style="width: 100%; transition: width 5000ms linear;"></div>
+                          `;
+                          
+                          container.appendChild(toast);
+                          
+                          setTimeout(() => {
+                              toast.classList.remove('translate-x-full', 'opacity-0');
+                              toast.classList.add('translate-x-0', 'opacity-100');
+                              const progress = toast.querySelector('div:last-child');
+                              if (progress) progress.style.width = '0%';
+                          }, 50);
+                          
+                          setTimeout(() => {
+                              if (document.getElementById(`toast-${id}`)) {
+                                  toast.classList.remove('translate-x-0', 'opacity-100');
+                                  toast.classList.add('translate-x-full', 'opacity-0');
+                                  setTimeout(() => toast.remove(), 300);
+                              }
+                          }, 5000);
+                      };
+
+                      // Global Confirmation Modal function
+                      let globalConfirmCallback = null;
+
+                      window.showConfirm = function(title, message, callback) {
+                          document.getElementById('globalConfirmTitle').textContent = title;
+                          document.getElementById('globalConfirmMessage').textContent = message;
+                          globalConfirmCallback = callback;
+                          
+                          const modal = document.getElementById('globalConfirmModal');
+                          modal.classList.remove('hidden');
+                          modal.classList.add('flex');
+                      };
+
+                      window.closeGlobalConfirm = function() {
+                          const modal = document.getElementById('globalConfirmModal');
+                          modal.classList.remove('flex');
+                          modal.classList.add('hidden');
+                          globalConfirmCallback = null;
+                      };
+
+                      document.getElementById('globalConfirmBtn').addEventListener('click', () => {
+                          if (globalConfirmCallback) {
+                              globalConfirmCallback();
+                          }
+                          window.closeGlobalConfirm();
+                      });
+
+                      // Trigger session alerts automatically on page load
+                      document.addEventListener('DOMContentLoaded', () => {
+                                                                      });
+                  </script>
+
+                  
+                      </body>
+          </html>
+        headers:
+          content-type: 'text/html; charset=utf-8'
+          cache-control: 'no-cache, private'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6InRXeWtJSExZZnI1WEFnd3diT1pCeGc9PSIsInZhbHVlIjoiNWNhbE1kWHVKcnRwQVdlTTZKWng5V3B1QXBUZDBJcEl2NjFmQmUvRVUxWkxNcHBoSUlTZG9Da28yY080eFVFQ1lBYnp0WU93Zld2REhINUszTTRSWVJNajY4eEJWT3k3a3ZrOWNQaE45VHlXVHI3Vy84YlBTSVI5NTdGcWIvQnYiLCJtYWMiOiJkOWNlZjgyYzk3NmJlYWNhYTI5OGUxODAwM2EyZWIzYzY1N2NjNGVhNzA0ZWYxMDJlNTFhNzBkZmFmMjFmOWZkIiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; samesite=lax; garuda-session=eyJpdiI6Im9kay9wMGJoV3JMM1BKZ1JKSHNPQmc9PSIsInZhbHVlIjoicFNzcmRhTjdNWmhBRE44WHZTWS9CemNJVXFCYVlzYkxwVFBTQUtGREZTSnNJV3U5bUI4dTJBOENlYkI4NFlLdThSenpiZFRNY0orOWNGNXRlYk1EZUp0cyt1c3NIT2hvR0hHT0NhWFhxODliWmxNRlUzdkcwZ3dWaGpTZWdMOEIiLCJtYWMiOiJkMTJhZjUzZWQ0ZWFlZTgxN2E5N2M3NGRmNmI4OWY4ZDFhMDVkZDdiZGI5ODQxODAyZWFmNDBmNzM2Y2ZlOWJmIiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: register
+    metadata:
+      custom: []
+      groupName: Autentikasi
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Proses Registrasi'
+      description: 'Mendaftarkan pengguna baru ke dalam sistem.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Nama lengkap pengguna.'
+        required: true
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      email:
+        custom: []
+        name: email
+        description: 'Alamat email unik pengguna.'
+        required: true
+        example: john@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: 'Password akun minimal 8 karakter.'
+        required: true
+        example: password
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password_confirmation:
+        custom: []
+        name: password_confirmation
+        description: 'Konfirmasi password.'
+        required: true
+        example: password
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name: 'John Doe'
+      email: john@example.com
+      password: password
+      password_confirmation: password
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: login
+    metadata:
+      custom: []
+      groupName: Autentikasi
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Halaman Login'
+      description: 'Menampilkan halaman formulir login pengguna.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |
+          <!DOCTYPE html>
+          <html lang="en">
+              <head>
+                  <meta charset="utf-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                  <meta name="csrf-token" content="s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE">
+
+                  <title>Garuda</title>
+                  <link rel="icon" type="image/svg+xml" href="http://127.0.0.1:8000/images/logo.svg">
+
+                  <link rel="preconnect" href="https://fonts.googleapis.com">
+                  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+                  <link rel="preload" as="style" href="http://127.0.0.1:8000/build/assets/app-CNV64zgk.css" /><link rel="stylesheet" href="http://127.0.0.1:8000/build/assets/app-CNV64zgk.css" data-navigate-track="reload" />                    <link rel="modulepreload" as="script" href="http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js" /><script type="module" src="http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js" data-navigate-track="reload"></script>                
+                  <style>[x-cloak] { display: none !important; }</style>
+              </head>
+              <body
+                  class="bg-cover bg-center bg-fixed bg-no-repeat"
+                  style="background-image: url('http://127.0.0.1:8000/images/WhatsApp Image 2026-06-14 at 16.52.35.webp');">
+                      
+                      
+                      <main>
+                          <div class="min-h-screen flex items-center justify-center px-4 py-8">
+              <div class="card p-8 max-w-sm w-full">
+
+                  
+                  <div class="text-center mb-6">
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mx-auto text-primary">
+                          <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                      </svg>
+                      <h1 class="font-display text-headline-md text-primary mt-2">Garuda</h1>
+                  </div>
+
+                  
+                  <h2 class="font-display text-headline-sm text-primary mb-1">Masuk</h2>
+                  <p class="text-body-sm text-tertiary mb-6">Pesan tiket penerbangan impianmu sekarang</p>
+
+                  
+                  
+                  <form method="POST" action="http://127.0.0.1:8000/login">
+                      <input type="hidden" name="_token" value="s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE" autocomplete="off">
+                      
+                      <div class="mb-4">
+                          <label for="email" class="text-label-sm text-tertiary mb-1 block">Email</label>
+                          <div class="relative">
+                              <input id="email" type="email" name="email" value="" required autofocus autocomplete="username" placeholder="contoh@email.com"
+                                  class="input-field  pl-10">
+                              <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                                  <circle cx="12" cy="7" r="4"/>
+                              </svg>
+                          </div>
+                                      </div>
+
+                      
+                      <div class="mb-4">
+                          <label for="password" class="text-label-sm text-tertiary mb-1 block">Kata Sandi</label>
+                          <div class="relative">
+                              <input id="password" type="password" name="password" required autocomplete="current-password" placeholder="Masukkan kata sandi"
+                                  class="input-field  pl-10">
+                              <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                  <path d="M7 11V7a5 5 0 0110 0v4"/>
+                              </svg>
+                          </div>
+                                      </div>
+
+                      
+                      <div class="flex items-center justify-between mb-6">
+                          <label class="flex items-center gap-2 cursor-pointer">
+                              <input type="checkbox" name="remember" id="remember_me" class="accent-primary rounded border-border">
+                              <span class="text-body-sm text-tertiary">Ingat saya</span>
+                          </label>
+                                              <a href="http://127.0.0.1:8000/forgot-password" class="text-nav-link text-primary hover:text-secondary transition-colors">Lupa kata sandi?</a>
+                                      </div>
+
+                      
+                      <button type="submit" class="btn-primary w-full">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13 12H3"/>
+                          </svg>
+                          Masuk
+                      </button>
+                  </form>
+
+                  
+                              <p class="text-center mt-4 text-body-sm text-tertiary">
+                          Belum punya akun? <a href="http://127.0.0.1:8000/register" class="text-nav-link text-primary hover:text-secondary transition-colors">Daftar di sini</a>
+                      </p>
+                  
+              </div>
+          </div>
+                      </main>
+                  </div>
+
+                  <!-- Global Toast Notifications Container -->
+                  <div id="globalToastContainer" class="fixed top-5 right-5 z-[100] flex flex-col gap-3 w-full max-w-sm pointer-events-none"></div>
+
+                  <!-- Global Confirmation Modal Container -->
+                  <div 
+                      id="globalConfirmModal" 
+                      class="fixed inset-0 z-[150] hidden items-center justify-center overflow-y-auto"
+                  >
+                      <!-- Overlay -->
+                      <div 
+                          onclick="window.closeGlobalConfirm()" 
+                          class="fixed inset-0 bg-black/60 backdrop-blur-sm"
+                      ></div>
+
+                      <!-- Modal Content -->
+                      <div class="relative bg-surface rounded-2xl max-w-md w-full mx-4 p-6 shadow-2xl border border-border/80 z-10 space-y-6">
+                          <div class="flex items-start gap-4">
+                              <!-- Alert Warning Icon -->
+                              <div class="shrink-0 w-10 h-10 rounded-full bg-rose-50 dark:bg-rose-950/30 flex items-center justify-center text-rose-600 dark:text-rose-400">
+                                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                              </div>
+                              <div class="space-y-1">
+                                  <h3 id="globalConfirmTitle" class="font-display text-headline-sm text-primary">Konfirmasi</h3>
+                                  <p id="globalConfirmMessage" class="text-body-md text-tertiary">Apakah Anda yakin?</p>
+                              </div>
+                          </div>
+
+                          <div class="flex justify-end gap-3">
+                              <button 
+                                  onclick="window.closeGlobalConfirm()"
+                                  class="px-5 py-2.5 rounded-full border border-border text-on-surface hover:bg-neutral transition-colors text-label-lg font-semibold"
+                              >
+                                  Batal
+                              </button>
+                              <button 
+                                  id="globalConfirmBtn"
+                                  class="px-5 py-2.5 rounded-full bg-rose-600 hover:bg-rose-700 text-surface transition-colors text-label-lg font-semibold"
+                              >
+                                  Ya, Batalkan
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+
+                  <script>
+                      // Global Toast Notification function
+                      window.showNotification = function(type, message) {
+                          const container = document.getElementById('globalToastContainer');
+                          if (!container) return;
+                          const id = Date.now();
+                          
+                          let bgClass = '';
+                          let iconSvg = '';
+                          let progressBg = '';
+                          
+                          if (type === 'success') {
+                              bgClass = 'bg-emerald-50/95 border-emerald-200 text-emerald-800 dark:bg-emerald-950/95 dark:border-emerald-800 dark:text-emerald-200';
+                              iconSvg = '<svg class="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
+                              progressBg = 'bg-emerald-500';
+                          } else if (type === 'error' || type === 'danger') {
+                              bgClass = 'bg-rose-50/95 border-rose-200 text-rose-800 dark:bg-rose-950/95 dark:border-rose-800 dark:text-rose-200';
+                              iconSvg = '<svg class="w-5 h-5 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>';
+                              progressBg = 'bg-rose-500';
+                          } else if (type === 'warning') {
+                              bgClass = 'bg-amber-50/95 border-amber-200 text-amber-800 dark:bg-amber-950/95 dark:border-amber-800 dark:text-amber-200';
+                              iconSvg = '<svg class="w-5 h-5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>';
+                              progressBg = 'bg-amber-500';
+                          } else {
+                              bgClass = 'bg-sky-50/95 border-sky-200 text-sky-800 dark:bg-sky-950/95 dark:border-sky-800 dark:text-sky-200';
+                              iconSvg = '<svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
+                              progressBg = 'bg-sky-500';
+                          }
+
+                          const toast = document.createElement('div');
+                          toast.id = `toast-${id}`;
+                          toast.className = `relative flex gap-3 p-4 rounded-xl border shadow-lg backdrop-blur-md pointer-events-auto overflow-hidden transition-all duration-300 transform translate-x-full opacity-0 ${bgClass}`;
+                          toast.innerHTML = `
+                              <div class="shrink-0">${iconSvg}</div>
+                              <div class="flex-1">
+                                  <p class="text-sm font-semibold leading-5">${message}</p>
+                              </div>
+                              <button onclick="document.getElementById('toast-${id}').remove()" class="shrink-0 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+                                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                              </button>
+                              <div class="absolute bottom-0 left-0 h-1 ${progressBg}" style="width: 100%; transition: width 5000ms linear;"></div>
+                          `;
+                          
+                          container.appendChild(toast);
+                          
+                          setTimeout(() => {
+                              toast.classList.remove('translate-x-full', 'opacity-0');
+                              toast.classList.add('translate-x-0', 'opacity-100');
+                              const progress = toast.querySelector('div:last-child');
+                              if (progress) progress.style.width = '0%';
+                          }, 50);
+                          
+                          setTimeout(() => {
+                              if (document.getElementById(`toast-${id}`)) {
+                                  toast.classList.remove('translate-x-0', 'opacity-100');
+                                  toast.classList.add('translate-x-full', 'opacity-0');
+                                  setTimeout(() => toast.remove(), 300);
+                              }
+                          }, 5000);
+                      };
+
+                      // Global Confirmation Modal function
+                      let globalConfirmCallback = null;
+
+                      window.showConfirm = function(title, message, callback) {
+                          document.getElementById('globalConfirmTitle').textContent = title;
+                          document.getElementById('globalConfirmMessage').textContent = message;
+                          globalConfirmCallback = callback;
+                          
+                          const modal = document.getElementById('globalConfirmModal');
+                          modal.classList.remove('hidden');
+                          modal.classList.add('flex');
+                      };
+
+                      window.closeGlobalConfirm = function() {
+                          const modal = document.getElementById('globalConfirmModal');
+                          modal.classList.remove('flex');
+                          modal.classList.add('hidden');
+                          globalConfirmCallback = null;
+                      };
+
+                      document.getElementById('globalConfirmBtn').addEventListener('click', () => {
+                          if (globalConfirmCallback) {
+                              globalConfirmCallback();
+                          }
+                          window.closeGlobalConfirm();
+                      });
+
+                      // Trigger session alerts automatically on page load
+                      document.addEventListener('DOMContentLoaded', () => {
+                                                                      });
+                  </script>
+
+                  
+                      </body>
+          </html>
+        headers:
+          content-type: 'text/html; charset=utf-8'
+          cache-control: 'no-cache, private'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImFCSDV5SEZmWmNEMUMzcmQwY1ZkcVE9PSIsInZhbHVlIjoiTGpsMGJvUzJWdUxKd0VZOStRK25FTEV3TG50UmhraG9MZys3dFhLVE9EY3VPNHhHQjUvNHI3aTJoQ1JLQ1VVRU1LYkF5MG1xSXNYektuVEwzWVArTkEvZmlkQmdQTEZaYlRUM3g5TURuZDN0TVhQMnJjdk5qQjJiQ3RTWC9za2giLCJtYWMiOiI1MmZiNjlmNDhjZDNiOTZiOWE5YWRlZGRiNzc2MTU4YzFjMTJmMDBmOTY4MDQ2MjQxZjM1N2JlYmZmYjJhZTViIiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; samesite=lax; garuda-session=eyJpdiI6Ik8zT2RoRFllb3FSZnlLckl2Z2RFdkE9PSIsInZhbHVlIjoiUUQ5dnVlaWNaaVVVNTZCL2g4bUwvZDhzQ1RkaG5vaDhDVlVacjVPMi80QnNHallORU40dFFkQ1Q0QW90akRhK3haVFN1MFB2cjA4QmVvYjBBbFBFdVprY3gyekk1emhpYkJkdU14b0s1WUV4OXhGWDRZZGRPc3hFdjZyTVIyY1ciLCJtYWMiOiJhNWZjYzkwY2M0MmM4NTRhNjBjYWUzNjEzNWQzNjRiOGJmYjAyNDY3MmMzYjIxZjFmMWI1M2FkNDJkNjYzODNlIiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: login
+    metadata:
+      custom: []
+      groupName: Autentikasi
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Proses Login'
+      description: 'Melakukan autentikasi kredensial pengguna dan memulai sesi baru.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        custom: []
+        name: email
+        description: 'Alamat email pengguna.'
+        required: true
+        example: john@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: 'Password pengguna.'
+        required: true
+        example: password
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      remember:
+        custom: []
+        name: remember
+        description: 'Menandai agar sesi tetap aktif setelah browser ditutup.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      email: john@example.com
+      password: password
+      remember: true
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: forgot-password
+    metadata:
+      custom: []
+      groupName: Autentikasi
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Halaman Lupa Password'
+      description: 'Menampilkan formulir untuk meminta link reset password.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          <!DOCTYPE html>
+          <html lang="en">
+              <head>
+                  <meta charset="utf-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                  <meta name="csrf-token" content="s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE">
+
+                  <title>Garuda</title>
+                  <link rel="icon" type="image/svg+xml" href="http://127.0.0.1:8000/images/logo.svg">
+
+                  <!-- Fonts -->
+                  <link rel="preconnect" href="https://fonts.googleapis.com">
+                  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+                  <!-- Scripts -->
+                  <link rel="preload" as="style" href="http://127.0.0.1:8000/build/assets/app-CNV64zgk.css" /><link rel="modulepreload" as="script" href="http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js" /><link rel="stylesheet" href="http://127.0.0.1:8000/build/assets/app-CNV64zgk.css" data-navigate-track="reload" /><script type="module" src="http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js" data-navigate-track="reload"></script>    </head>
+              <body class="font-sans text-gray-900 antialiased">
+                  <div class="mb-4 text-sm text-gray-600">
+                  Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.
+              </div>
+
+              <!-- Session Status -->
+              
+              <form method="POST" action="http://127.0.0.1:8000/forgot-password">
+                  <input type="hidden" name="_token" value="s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE" autocomplete="off">
+                  <!-- Email Address -->
+                  <div>
+                      <label class="block font-medium text-sm text-gray-700" for="email">
+              Email
+          </label>
+                      <input  class="border-border focus:border-primary focus:ring-primary rounded-lg shadow-sm bg-surface text-on-surface block mt-1 w-full" id="email" type="email" name="email" required="required" autofocus="autofocus">
+                              </div>
+
+                  <div class="flex items-center justify-end mt-4">
+                      <button type="submit" class="inline-flex items-center px-6 py-2.5 bg-primary border border-transparent rounded-full font-semibold text-xs text-white uppercase tracking-widest hover:bg-primary-hover active:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition ease-in-out duration-150 shadow-sm">
+              Email Password Reset Link
+          </button>
+                  </div>
+              </form>
+              </body>
+          </html>
+        headers:
+          content-type: 'text/html; charset=utf-8'
+          cache-control: 'no-cache, private'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImMybFlvZTJTdzBYbVV6TkVqbTFQTEE9PSIsInZhbHVlIjoiZUhVOFM5WlZOTWZVbHhnbXEwenNXWEJ1L3FLUE5vMjk2dEc4bmpjOVlZaU9CeWFGTmRzOE94QmhQR3AwcGtJM3lndVRBMlhDU2FxTGxYNldhSUZZQXhwUWszamsxeUxnODh5UmszTVBkbXhmZElqenZVUUFWbnBPbHA5S2ROL2EiLCJtYWMiOiJmYzA2YWUzNDRlZGY3NmYwYmYwZWQxZjRlMmU4Njg1YzQyYjgwYjhhYzZmZGRiMWNjOThjMWIwYzQwMzEwYzFhIiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; samesite=lax; garuda-session=eyJpdiI6ImhuTWZUSDJSWTJoVEdYdmpwM2lVdWc9PSIsInZhbHVlIjoiOG9wQXo4cktEbVpIQ1k2bXppNnpJL2NIRHVCTWs1NTYvRlo1N1IzbHNENlUrN3Zwakpoc25UMDV3UWtSc2ZZdTdycTd4Uk1MMVVUQ3pzeFNsVFpabURmbmZWQWRnV2crU1hlRURLalZaeFk5b0EwMVBWcC85SWFpblNBeDRUZXoiLCJtYWMiOiI0YTU3Mzk2NTliMTNiNjg2OWM3ODZhNzg5OGFiNDdhNzFhZjNjMjhiMjllNzExYzFiYTZhNDNjNTljMDgwNGEyIiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: forgot-password
+    metadata:
+      custom: []
+      groupName: Autentikasi
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Kirim Link Reset Password'
+      description: 'Mengirimkan surel (email) berisi link reset password kepada pengguna.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        custom: []
+        name: email
+        description: 'Alamat email akun yang ingin di-reset passwordnya.'
+        required: true
+        example: john@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      email: john@example.com
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'reset-password/{token}'
+    metadata:
+      custom: []
+      groupName: Autentikasi
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Halaman Reset Password Baru'
+      description: 'Menampilkan halaman formulir untuk mengisi password baru setelah menekan link reset.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      token:
+        custom: []
+        name: token
+        description: ''
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      token: architecto
+    queryParameters:
+      token:
+        custom: []
+        name: token
+        description: 'Token reset password unik dari email.'
+        required: true
+        example: abcde12345
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      email:
+        custom: []
+        name: email
+        description: 'Alamat email pengguna.'
+        required: true
+        example: john@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      token: abcde12345
+      email: john@example.com
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          <!DOCTYPE html>
+          <html lang="en">
+              <head>
+                  <meta charset="utf-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                  <meta name="csrf-token" content="s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE">
+
+                  <title>Garuda</title>
+                  <link rel="icon" type="image/svg+xml" href="http://127.0.0.1:8000/images/logo.svg">
+
+                  <!-- Fonts -->
+                  <link rel="preconnect" href="https://fonts.googleapis.com">
+                  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+                  <!-- Scripts -->
+                  <link rel="preload" as="style" href="http://127.0.0.1:8000/build/assets/app-CNV64zgk.css" /><link rel="modulepreload" as="script" href="http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js" /><link rel="stylesheet" href="http://127.0.0.1:8000/build/assets/app-CNV64zgk.css" data-navigate-track="reload" /><script type="module" src="http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js" data-navigate-track="reload"></script>    </head>
+              <body class="font-sans text-gray-900 antialiased">
+                  <form method="POST" action="http://127.0.0.1:8000/reset-password">
+                  <input type="hidden" name="_token" value="s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE" autocomplete="off">
+                  <!-- Password Reset Token -->
+                  <input type="hidden" name="token" value="architecto">
+
+                  <!-- Email Address -->
+                  <div>
+                      <label class="block font-medium text-sm text-gray-700" for="email">
+              Email
+          </label>
+                      <input  class="border-border focus:border-primary focus:ring-primary rounded-lg shadow-sm bg-surface text-on-surface block mt-1 w-full" id="email" type="email" name="email" value="john@example.com" required="required" autofocus="autofocus" autocomplete="username">
+                              </div>
+
+                  <!-- Password -->
+                  <div class="mt-4">
+                      <label class="block font-medium text-sm text-gray-700" for="password">
+              Password
+          </label>
+                      <input  class="border-border focus:border-primary focus:ring-primary rounded-lg shadow-sm bg-surface text-on-surface block mt-1 w-full" id="password" type="password" name="password" required="required" autocomplete="new-password">
+                              </div>
+
+                  <!-- Confirm Password -->
+                  <div class="mt-4">
+                      <label class="block font-medium text-sm text-gray-700" for="password_confirmation">
+              Confirm Password
+          </label>
+
+                      <input  class="border-border focus:border-primary focus:ring-primary rounded-lg shadow-sm bg-surface text-on-surface block mt-1 w-full" id="password_confirmation" type="password" name="password_confirmation" required="required" autocomplete="new-password">
+
+                              </div>
+
+                  <div class="flex items-center justify-end mt-4">
+                      <button type="submit" class="inline-flex items-center px-6 py-2.5 bg-primary border border-transparent rounded-full font-semibold text-xs text-white uppercase tracking-widest hover:bg-primary-hover active:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition ease-in-out duration-150 shadow-sm">
+              Reset Password
+          </button>
+                  </div>
+              </form>
+              </body>
+          </html>
+        headers:
+          content-type: 'text/html; charset=utf-8'
+          cache-control: 'no-cache, private'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IlZKUDNxOERINjQ4Nnk3M2xqcnRSd0E9PSIsInZhbHVlIjoiVzFHOVc0NzEzcmlwamdUQjJnVnZsa3k1b01TMm1sNGVQQW0zdXNGU1JuV21uVHhIckRkazNuOGhETDRad1EzYVNhNWdib3NGRHI0cWZOamlPaHJ4bWFJMFI3akQzSzY1NzRETUJwaFJrVC9LUmc3Z1Y3aEZXei9QSklkQ2ZKRWYiLCJtYWMiOiJiZmQ2MGJhNzdlZDg3MzgyMjM5YzYzZjBlMmI2MTcyOGUwZDc3OTQxZGY2ODE4NGY3ODUzYzc3YTIyYjEyNjU4IiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; samesite=lax; garuda-session=eyJpdiI6Ik9xTU1hejNTREZlY2Fpdmp2MEtkamc9PSIsInZhbHVlIjoiYy82SWk0VGg2MXQ1c2VZbzlGNUpLRkdRRnFWNFBTN3A1OTE5ZTYxcE9jQmg2djJka3drekZPQ2hZVW5PVFA4ZWxxa0hlOEJiQWdxTGRzK05YT3laNG5GOVpMeUZQS3JGKy9tUzBXaUpuSG1sZ1U1ZTRQcGRwektieFJGaEh1cGciLCJtYWMiOiJlNWEyNWZjOWYwOGU3YWI0ZjYxZjcxNDc3NmI4MDEyMjM1ODkzNzg3YTFjNTllMjZhNDA3NTRiY2QyMjRlNjg2IiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: reset-password
+    metadata:
+      custom: []
+      groupName: Autentikasi
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Proses Simpan Password Baru'
+      description: 'Menyimpan password baru pengguna setelah tervalidasi dengan token reset.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      token:
+        custom: []
+        name: token
+        description: 'Token reset password unik.'
+        required: true
+        example: abcde12345
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      email:
+        custom: []
+        name: email
+        description: 'Alamat email pengguna.'
+        required: true
+        example: john@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: 'Password baru minimal 8 karakter.'
+        required: true
+        example: newpassword
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password_confirmation:
+        custom: []
+        name: password_confirmation
+        description: 'Konfirmasi password baru.'
+        required: true
+        example: newpassword
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      token: abcde12345
+      email: john@example.com
+      password: newpassword
+      password_confirmation: newpassword
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: confirm-password
+    metadata:
+      custom: []
+      groupName: Autentikasi
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Halaman Konfirmasi Password'
+      description: 'Menampilkan formulir konfirmasi password sebelum mengakses area sensitif.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 302
+        content: |-
+          <!DOCTYPE html>
+          <html>
+              <head>
+                  <meta charset="UTF-8" />
+                  <meta http-equiv="refresh" content="0;url='http://127.0.0.1:8000/login'" />
+
+                  <title>Redirecting to http://127.0.0.1:8000/login</title>
+              </head>
+              <body>
+                  Redirecting to <a href="http://127.0.0.1:8000/login">http://127.0.0.1:8000/login</a>.
+              </body>
+          </html>
+        headers:
+          cache-control: 'no-cache, private'
+          location: 'http://127.0.0.1:8000/login'
+          content-type: 'text/html; charset=utf-8'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6InlOZ2FxbnN5UDA3SllEM3NiMVJWblE9PSIsInZhbHVlIjoicWRkR3MwK1Fsa1NnTElpS1pJSEpjOGdHR3AwU244anNNcXA5endRVDBnaW94MWI4TFhOdjRUUkRJSUhJeldzbmFleElKbmtYQmcwL2VEM1BhNVcydko2QWVGY09TZktPYWlLWmhmL080WjdZOSt2MTJHMTVzVTVJT0Vxb0pvWGUiLCJtYWMiOiI2M2U4MjA5Y2QyNTk4ODM3Yzg1ODQ2ZDI4YjBlYzVhYmU5NjU0Nzk5ZjA2YjNhOTZiZjg0N2UxNmJkNmFhZGI0IiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; samesite=lax; garuda-session=eyJpdiI6IkFqcUFVNmc4MmFNMzFCUEtLbEN1QVE9PSIsInZhbHVlIjoiTitpK2tnVDNoMHh3OTNCbWxTNVE0QUlHQ2RuTlh6ckx6QTNoMzlpWjM2UThGQmxnbGQ4alpLNllzMHIxb3hXWnRmS1VmdDNlaDJPVzg1YXEzREFuY0M5WHFMSzdPVVlqZGZncVZsci9mMlNxTVUzZUdvdmJvVmc2TzZCU3JuSXkiLCJtYWMiOiI2MjE0YjI4YWIwOWJjMWZhZTQzZDEzMGE5NjMzZjM4ZjUxNWUxNmQyMjk3MGU4N2Y3NmYxZjg5MDQyOWM3MjQxIiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: confirm-password
+    metadata:
+      custom: []
+      groupName: Autentikasi
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Proses Konfirmasi Password'
+      description: 'Memverifikasi apakah password yang dimasukkan sesuai dengan pengguna saat ini.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      password:
+        custom: []
+        name: password
+        description: 'Password saat ini untuk diverifikasi.'
+        required: true
+        example: password
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      password: password
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: password
+    metadata:
+      custom: []
+      groupName: Autentikasi
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Perbarui Password Pengguna'
+      description: 'Mengubah password pengguna yang sedang masuk setelah memverifikasi password saat ini.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      current_password:
+        custom: []
+        name: current_password
+        description: 'Password pengguna saat ini.'
+        required: true
+        example: password
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: 'Password baru minimal 8 karakter.'
+        required: true
+        example: newpassword
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password_confirmation:
+        custom: []
+        name: password_confirmation
+        description: 'Konfirmasi password baru.'
+        required: true
+        example: newpassword
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      current_password: password
+      password: newpassword
+      password_confirmation: newpassword
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: logout
+    metadata:
+      custom: []
+      groupName: Autentikasi
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Proses Logout'
+      description: 'Mengeluarkan pengguna dari sistem dan mengakhiri sesi aktif.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

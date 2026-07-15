@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 900" preserveAspectRatio="none">
+  <path d="M200 10
+           C 320 10, 370 80, 380 220
+           L 390 650
+           C 390 780, 320 870, 200 890
+           C 80 870, 10 780, 10 650
+           L 20 220
+           C 30 80, 80 10, 200 10 Z"
+        fill="none" stroke="#facc15" stroke-width="2" opacity="0.5"/>
+
+  <line x1="10" y1="260" x2="-30" y2="300" stroke="#facc15" stroke-width="2" opacity="0.5"/>
+  <line x1="390" y1="260" x2="430" y2="300" stroke="#facc15" stroke-width="2" opacity="0.5"/>
+</svg>

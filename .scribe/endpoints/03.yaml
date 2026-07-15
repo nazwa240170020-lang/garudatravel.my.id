@@ -1,0 +1,104 @@
+name: 'Dashboard Pelanggan'
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: dashboard
+    metadata:
+      custom: []
+      groupName: 'Dashboard Pelanggan'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Dashboard Pengguna'
+      description: 'Menampilkan halaman dashboard untuk pengguna yang sudah login untuk mencari penerbangan.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      departure_id:
+        custom: []
+        name: departure_id
+        description: 'ID bandara keberangkatan.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      arrival_id:
+        custom: []
+        name: arrival_id
+        description: 'ID bandara tujuan.'
+        required: false
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      date:
+        custom: []
+        name: date
+        description: 'Tanggal keberangkatan (format Y-m-d).'
+        required: false
+        example: '2026-06-26'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      passengers:
+        custom: []
+        name: passengers
+        description: 'Jumlah penumpang (1-9).'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      departure_id: 1
+      arrival_id: 2
+      date: '2026-06-26'
+      passengers: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 302
+        content: |-
+          <!DOCTYPE html>
+          <html>
+              <head>
+                  <meta charset="UTF-8" />
+                  <meta http-equiv="refresh" content="0;url='http://127.0.0.1:8000/login'" />
+
+                  <title>Redirecting to http://127.0.0.1:8000/login</title>
+              </head>
+              <body>
+                  Redirecting to <a href="http://127.0.0.1:8000/login">http://127.0.0.1:8000/login</a>.
+              </body>
+          </html>
+        headers:
+          cache-control: 'no-cache, private'
+          location: 'http://127.0.0.1:8000/login'
+          content-type: 'text/html; charset=utf-8'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImJQaTV4Z01qQ2xXVFBZMzIxWXZNS1E9PSIsInZhbHVlIjoiZGJ2WkZ5YnBob3ZmcjdCaGVSOUFPSEE0NkkyaTBSSDc2dnVpTFV4MFJSTW9welZEaXZMOVlNam9VZE43RHFGRytvM09JYjYzRTEwSVg0ZzJ3S0kvVDVtSC9OKzVzZjljQnFhM1MzRWVIaWsrcjArTVNBYXJMNFY4Y2Nsd1pLU1ciLCJtYWMiOiI3YTZlMDU1Y2JlM2RjYzZlY2RiMjE1ZDI4ZDU2MTA1NzdhMmQxMTA3Nzk4Yjc4YjUyN2NkMjQzYWEyM2M1YTRkIiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:19 GMT; Max-Age=7200; path=/; samesite=lax; garuda-session=eyJpdiI6Ii9iRkg2eFRNekQ2VUUxY1JHbHpSUXc9PSIsInZhbHVlIjoiYm1YR0JLOUp4M2hjMW52K09LYmRFNVlNQ1VEMmpWZW8yZlczcGdJTjhpQmNPWjZtRzlmcThwL0R5VTdQYzBsZVBxUUZaNXljV0krTWU2eTZ6NjJmQ3E0MkdsWkFMQzVpUEVwcDllYWQvS0hySnA5blhaWEZVR1pzeER6QnFFMzMiLCJtYWMiOiI3ZTkwNmUyM2I5YTg4MmE1Yjg3OWE0NjI5MWVhMTdiYjhhY2FkNWNjODk4MDMzZTM2Zjg1Nzk3MzllOTc2NTliIiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:19 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

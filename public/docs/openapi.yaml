@@ -1,0 +1,1703 @@
+openapi: 3.0.3
+info:
+  title: 'Garuda Flight Booking API Documentation'
+  description: 'Dokumentasi API untuk Sistem Pemesanan Tiket Garuda Travel.'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://127.0.0.1:8000'
+tags:
+  -
+    name: Autentikasi
+    description: ''
+  -
+    name: 'Dashboard Pelanggan'
+    description: ''
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: 'Halaman Utama'
+    description: ''
+  -
+    name: Pembayaran
+    description: ''
+  -
+    name: 'Pemesanan Tiket'
+    description: ''
+  -
+    name: Pencarian
+    description: ''
+  -
+    name: Profil
+    description: ''
+  -
+    name: Promosi
+    description: ''
+paths:
+  /register:
+    get:
+      summary: 'Halaman Registrasi'
+      operationId: halamanRegistrasi
+      description: 'Menampilkan halaman formulir pendaftaran pengguna baru.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <meta name=\"csrf-token\" content=\"s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE\">\n\n        <title>Garuda</title>\n        <link rel=\"icon\" type=\"image/svg+xml\" href=\"http://127.0.0.1:8000/images/logo.svg\">\n\n        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n        <link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap\" rel=\"stylesheet\">\n        <link rel=\"preload\" as=\"style\" href=\"http://127.0.0.1:8000/build/assets/app-CNV64zgk.css\" /><link rel=\"stylesheet\" href=\"http://127.0.0.1:8000/build/assets/app-CNV64zgk.css\" data-navigate-track=\"reload\" />                    <link rel=\"modulepreload\" as=\"script\" href=\"http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js\" /><script type=\"module\" src=\"http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js\" data-navigate-track=\"reload\"></script>                \n        <style>[x-cloak] { display: none !important; }</style>\n    </head>\n    <body\n        class=\"bg-cover bg-center bg-fixed bg-no-repeat\"\n        style=\"background-image: url('http://127.0.0.1:8000/images/WhatsApp Image 2026-06-14 at 16.52.35.webp');\">\n            \n            \n            <main>\n                <div class=\"min-h-screen flex items-center justify-center px-4 py-8\">\n    <div class=\"card p-8 max-w-sm w-full\">\n\n        \n        <div class=\"text-center mb-6\">\n            <svg width=\"40\" height=\"40\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" class=\"mx-auto text-primary\">\n                <path d=\"M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z\"/>\n            </svg>\n            <h1 class=\"font-display text-headline-md text-primary mt-2\">Garuda</h1>\n        </div>\n\n        \n        <h2 class=\"font-display text-headline-sm text-primary mb-1\">Buat Akun Baru</h2>\n        <p class=\"text-body-sm text-tertiary mb-6\">Daftar sekarang dan mulai pesan tiket penerbangan</p>\n\n        <form method=\"POST\" action=\"http://127.0.0.1:8000/register\">\n            <input type=\"hidden\" name=\"_token\" value=\"s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE\" autocomplete=\"off\">\n            \n            <div class=\"mb-4\">\n                <label for=\"name\" class=\"text-label-sm text-tertiary mb-1 block\">Nama Lengkap</label>\n                <div class=\"relative\">\n                    <input id=\"name\" type=\"text\" name=\"name\" value=\"\" required autofocus autocomplete=\"name\" placeholder=\"Nama lengkap\"\n                        class=\"input-field  pl-10\">\n                    <svg class=\"absolute left-3 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <path d=\"M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2\"/>\n                        <circle cx=\"12\" cy=\"7\" r=\"4\"/>\n                    </svg>\n                </div>\n                            </div>\n\n            \n            <div class=\"mb-4\">\n                <label for=\"email\" class=\"text-label-sm text-tertiary mb-1 block\">Email</label>\n                <div class=\"relative\">\n                    <input id=\"email\" type=\"email\" name=\"email\" value=\"\" required autocomplete=\"username\" placeholder=\"contoh@email.com\"\n                        class=\"input-field  pl-10\">\n                    <svg class=\"absolute left-3 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/>\n                        <path d=\"M22 7l-10 7L2 7\"/>\n                    </svg>\n                </div>\n                            </div>\n\n            \n            <div class=\"mb-4\">\n                <label for=\"password\" class=\"text-label-sm text-tertiary mb-1 block\">Kata Sandi</label>\n                <div class=\"relative\">\n                    <input id=\"password\" type=\"password\" name=\"password\" required autocomplete=\"new-password\" placeholder=\"Buat kata sandi\"\n                        class=\"input-field  pl-10\">\n                    <svg class=\"absolute left-3 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\" ry=\"2\"/>\n                        <path d=\"M7 11V7a5 5 0 0110 0v4\"/>\n                    </svg>\n                </div>\n                            </div>\n\n            \n            <div class=\"mb-6\">\n                <label for=\"password_confirmation\" class=\"text-label-sm text-tertiary mb-1 block\">Konfirmasi Kata Sandi</label>\n                <div class=\"relative\">\n                    <input id=\"password_confirmation\" type=\"password\" name=\"password_confirmation\" required autocomplete=\"new-password\" placeholder=\"Ulangi kata sandi\"\n                        class=\"input-field  pl-10\">\n                    <svg class=\"absolute left-3 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\" ry=\"2\"/>\n                        <path d=\"M7 11V7a5 5 0 0110 0v4\"/>\n                    </svg>\n                </div>\n                            </div>\n\n            \n            <button type=\"submit\" class=\"btn-primary w-full\">\n                <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                    <path d=\"M5 13l4 4L19 7\"/>\n                </svg>\n                Daftar\n            </button>\n        </form>\n\n        \n        <p class=\"text-center mt-4 text-body-sm text-tertiary\">\n            Sudah punya akun? <a href=\"http://127.0.0.1:8000/login\" class=\"text-nav-link text-primary hover:text-secondary transition-colors\">Masuk di sini</a>\n        </p>\n\n    </div>\n</div>\n            </main>\n        </div>\n\n        <!-- Global Toast Notifications Container -->\n        <div id=\"globalToastContainer\" class=\"fixed top-5 right-5 z-[100] flex flex-col gap-3 w-full max-w-sm pointer-events-none\"></div>\n\n        <!-- Global Confirmation Modal Container -->\n        <div \n            id=\"globalConfirmModal\" \n            class=\"fixed inset-0 z-[150] hidden items-center justify-center overflow-y-auto\"\n        >\n            <!-- Overlay -->\n            <div \n                onclick=\"window.closeGlobalConfirm()\" \n                class=\"fixed inset-0 bg-black/60 backdrop-blur-sm\"\n            ></div>\n\n            <!-- Modal Content -->\n            <div class=\"relative bg-surface rounded-2xl max-w-md w-full mx-4 p-6 shadow-2xl border border-border/80 z-10 space-y-6\">\n                <div class=\"flex items-start gap-4\">\n                    <!-- Alert Warning Icon -->\n                    <div class=\"shrink-0 w-10 h-10 rounded-full bg-rose-50 dark:bg-rose-950/30 flex items-center justify-center text-rose-600 dark:text-rose-400\">\n                        <svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z\"/></svg>\n                    </div>\n                    <div class=\"space-y-1\">\n                        <h3 id=\"globalConfirmTitle\" class=\"font-display text-headline-sm text-primary\">Konfirmasi</h3>\n                        <p id=\"globalConfirmMessage\" class=\"text-body-md text-tertiary\">Apakah Anda yakin?</p>\n                    </div>\n                </div>\n\n                <div class=\"flex justify-end gap-3\">\n                    <button \n                        onclick=\"window.closeGlobalConfirm()\"\n                        class=\"px-5 py-2.5 rounded-full border border-border text-on-surface hover:bg-neutral transition-colors text-label-lg font-semibold\"\n                    >\n                        Batal\n                    </button>\n                    <button \n                        id=\"globalConfirmBtn\"\n                        class=\"px-5 py-2.5 rounded-full bg-rose-600 hover:bg-rose-700 text-surface transition-colors text-label-lg font-semibold\"\n                    >\n                        Ya, Batalkan\n                    </button>\n                </div>\n            </div>\n        </div>\n\n        <script>\n            // Global Toast Notification function\n            window.showNotification = function(type, message) {\n                const container = document.getElementById('globalToastContainer');\n                if (!container) return;\n                const id = Date.now();\n                \n                let bgClass = '';\n                let iconSvg = '';\n                let progressBg = '';\n                \n                if (type === 'success') {\n                    bgClass = 'bg-emerald-50/95 border-emerald-200 text-emerald-800 dark:bg-emerald-950/95 dark:border-emerald-800 dark:text-emerald-200';\n                    iconSvg = '<svg class=\"w-5 h-5 text-emerald-600 dark:text-emerald-400\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\"/></svg>';\n                    progressBg = 'bg-emerald-500';\n                } else if (type === 'error' || type === 'danger') {\n                    bgClass = 'bg-rose-50/95 border-rose-200 text-rose-800 dark:bg-rose-950/95 dark:border-rose-800 dark:text-rose-200';\n                    iconSvg = '<svg class=\"w-5 h-5 text-rose-600 dark:text-rose-400\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z\"/></svg>';\n                    progressBg = 'bg-rose-500';\n                } else if (type === 'warning') {\n                    bgClass = 'bg-amber-50/95 border-amber-200 text-amber-800 dark:bg-amber-950/95 dark:border-amber-800 dark:text-amber-200';\n                    iconSvg = '<svg class=\"w-5 h-5 text-amber-600 dark:text-amber-400\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z\"/></svg>';\n                    progressBg = 'bg-amber-500';\n                } else {\n                    bgClass = 'bg-sky-50/95 border-sky-200 text-sky-800 dark:bg-sky-950/95 dark:border-sky-800 dark:text-sky-200';\n                    iconSvg = '<svg class=\"w-5 h-5 text-sky-600 dark:text-sky-400\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"/></svg>';\n                    progressBg = 'bg-sky-500';\n                }\n\n                const toast = document.createElement('div');\n                toast.id = `toast-${id}`;\n                toast.className = `relative flex gap-3 p-4 rounded-xl border shadow-lg backdrop-blur-md pointer-events-auto overflow-hidden transition-all duration-300 transform translate-x-full opacity-0 ${bgClass}`;\n                toast.innerHTML = `\n                    <div class=\"shrink-0\">${iconSvg}</div>\n                    <div class=\"flex-1\">\n                        <p class=\"text-sm font-semibold leading-5\">${message}</p>\n                    </div>\n                    <button onclick=\"document.getElementById('toast-${id}').remove()\" class=\"shrink-0 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors\">\n                        <svg class=\"w-4 h-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\"/></svg>\n                    </button>\n                    <div class=\"absolute bottom-0 left-0 h-1 ${progressBg}\" style=\"width: 100%; transition: width 5000ms linear;\"></div>\n                `;\n                \n                container.appendChild(toast);\n                \n                setTimeout(() => {\n                    toast.classList.remove('translate-x-full', 'opacity-0');\n                    toast.classList.add('translate-x-0', 'opacity-100');\n                    const progress = toast.querySelector('div:last-child');\n                    if (progress) progress.style.width = '0%';\n                }, 50);\n                \n                setTimeout(() => {\n                    if (document.getElementById(`toast-${id}`)) {\n                        toast.classList.remove('translate-x-0', 'opacity-100');\n                        toast.classList.add('translate-x-full', 'opacity-0');\n                        setTimeout(() => toast.remove(), 300);\n                    }\n                }, 5000);\n            };\n\n            // Global Confirmation Modal function\n            let globalConfirmCallback = null;\n\n            window.showConfirm = function(title, message, callback) {\n                document.getElementById('globalConfirmTitle').textContent = title;\n                document.getElementById('globalConfirmMessage').textContent = message;\n                globalConfirmCallback = callback;\n                \n                const modal = document.getElementById('globalConfirmModal');\n                modal.classList.remove('hidden');\n                modal.classList.add('flex');\n            };\n\n            window.closeGlobalConfirm = function() {\n                const modal = document.getElementById('globalConfirmModal');\n                modal.classList.remove('flex');\n                modal.classList.add('hidden');\n                globalConfirmCallback = null;\n            };\n\n            document.getElementById('globalConfirmBtn').addEventListener('click', () => {\n                if (globalConfirmCallback) {\n                    globalConfirmCallback();\n                }\n                window.closeGlobalConfirm();\n            });\n\n            // Trigger session alerts automatically on page load\n            document.addEventListener('DOMContentLoaded', () => {\n                                                            });\n        </script>\n\n        \n            </body>\n</html>\n"
+      tags:
+        - Autentikasi
+      security: []
+    post:
+      summary: 'Proses Registrasi'
+      operationId: prosesRegistrasi
+      description: 'Mendaftarkan pengguna baru ke dalam sistem.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Autentikasi
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Nama lengkap pengguna.'
+                  example: 'John Doe'
+                email:
+                  type: string
+                  description: 'Alamat email unik pengguna.'
+                  example: john@example.com
+                password:
+                  type: string
+                  description: 'Password akun minimal 8 karakter.'
+                  example: password
+                password_confirmation:
+                  type: string
+                  description: 'Konfirmasi password.'
+                  example: password
+              required:
+                - name
+                - email
+                - password
+                - password_confirmation
+      security: []
+  /login:
+    get:
+      summary: 'Halaman Login'
+      operationId: halamanLogin
+      description: 'Menampilkan halaman formulir login pengguna.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <meta name=\"csrf-token\" content=\"s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE\">\n\n        <title>Garuda</title>\n        <link rel=\"icon\" type=\"image/svg+xml\" href=\"http://127.0.0.1:8000/images/logo.svg\">\n\n        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n        <link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap\" rel=\"stylesheet\">\n        <link rel=\"preload\" as=\"style\" href=\"http://127.0.0.1:8000/build/assets/app-CNV64zgk.css\" /><link rel=\"stylesheet\" href=\"http://127.0.0.1:8000/build/assets/app-CNV64zgk.css\" data-navigate-track=\"reload\" />                    <link rel=\"modulepreload\" as=\"script\" href=\"http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js\" /><script type=\"module\" src=\"http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js\" data-navigate-track=\"reload\"></script>                \n        <style>[x-cloak] { display: none !important; }</style>\n    </head>\n    <body\n        class=\"bg-cover bg-center bg-fixed bg-no-repeat\"\n        style=\"background-image: url('http://127.0.0.1:8000/images/WhatsApp Image 2026-06-14 at 16.52.35.webp');\">\n            \n            \n            <main>\n                <div class=\"min-h-screen flex items-center justify-center px-4 py-8\">\n    <div class=\"card p-8 max-w-sm w-full\">\n\n        \n        <div class=\"text-center mb-6\">\n            <svg width=\"40\" height=\"40\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" class=\"mx-auto text-primary\">\n                <path d=\"M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z\"/>\n            </svg>\n            <h1 class=\"font-display text-headline-md text-primary mt-2\">Garuda</h1>\n        </div>\n\n        \n        <h2 class=\"font-display text-headline-sm text-primary mb-1\">Masuk</h2>\n        <p class=\"text-body-sm text-tertiary mb-6\">Pesan tiket penerbangan impianmu sekarang</p>\n\n        \n        \n        <form method=\"POST\" action=\"http://127.0.0.1:8000/login\">\n            <input type=\"hidden\" name=\"_token\" value=\"s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE\" autocomplete=\"off\">\n            \n            <div class=\"mb-4\">\n                <label for=\"email\" class=\"text-label-sm text-tertiary mb-1 block\">Email</label>\n                <div class=\"relative\">\n                    <input id=\"email\" type=\"email\" name=\"email\" value=\"\" required autofocus autocomplete=\"username\" placeholder=\"contoh@email.com\"\n                        class=\"input-field  pl-10\">\n                    <svg class=\"absolute left-3 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <path d=\"M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2\"/>\n                        <circle cx=\"12\" cy=\"7\" r=\"4\"/>\n                    </svg>\n                </div>\n                            </div>\n\n            \n            <div class=\"mb-4\">\n                <label for=\"password\" class=\"text-label-sm text-tertiary mb-1 block\">Kata Sandi</label>\n                <div class=\"relative\">\n                    <input id=\"password\" type=\"password\" name=\"password\" required autocomplete=\"current-password\" placeholder=\"Masukkan kata sandi\"\n                        class=\"input-field  pl-10\">\n                    <svg class=\"absolute left-3 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\" ry=\"2\"/>\n                        <path d=\"M7 11V7a5 5 0 0110 0v4\"/>\n                    </svg>\n                </div>\n                            </div>\n\n            \n            <div class=\"flex items-center justify-between mb-6\">\n                <label class=\"flex items-center gap-2 cursor-pointer\">\n                    <input type=\"checkbox\" name=\"remember\" id=\"remember_me\" class=\"accent-primary rounded border-border\">\n                    <span class=\"text-body-sm text-tertiary\">Ingat saya</span>\n                </label>\n                                    <a href=\"http://127.0.0.1:8000/forgot-password\" class=\"text-nav-link text-primary hover:text-secondary transition-colors\">Lupa kata sandi?</a>\n                            </div>\n\n            \n            <button type=\"submit\" class=\"btn-primary w-full\">\n                <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                    <path d=\"M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13 12H3\"/>\n                </svg>\n                Masuk\n            </button>\n        </form>\n\n        \n                    <p class=\"text-center mt-4 text-body-sm text-tertiary\">\n                Belum punya akun? <a href=\"http://127.0.0.1:8000/register\" class=\"text-nav-link text-primary hover:text-secondary transition-colors\">Daftar di sini</a>\n            </p>\n        \n    </div>\n</div>\n            </main>\n        </div>\n\n        <!-- Global Toast Notifications Container -->\n        <div id=\"globalToastContainer\" class=\"fixed top-5 right-5 z-[100] flex flex-col gap-3 w-full max-w-sm pointer-events-none\"></div>\n\n        <!-- Global Confirmation Modal Container -->\n        <div \n            id=\"globalConfirmModal\" \n            class=\"fixed inset-0 z-[150] hidden items-center justify-center overflow-y-auto\"\n        >\n            <!-- Overlay -->\n            <div \n                onclick=\"window.closeGlobalConfirm()\" \n                class=\"fixed inset-0 bg-black/60 backdrop-blur-sm\"\n            ></div>\n\n            <!-- Modal Content -->\n            <div class=\"relative bg-surface rounded-2xl max-w-md w-full mx-4 p-6 shadow-2xl border border-border/80 z-10 space-y-6\">\n                <div class=\"flex items-start gap-4\">\n                    <!-- Alert Warning Icon -->\n                    <div class=\"shrink-0 w-10 h-10 rounded-full bg-rose-50 dark:bg-rose-950/30 flex items-center justify-center text-rose-600 dark:text-rose-400\">\n                        <svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z\"/></svg>\n                    </div>\n                    <div class=\"space-y-1\">\n                        <h3 id=\"globalConfirmTitle\" class=\"font-display text-headline-sm text-primary\">Konfirmasi</h3>\n                        <p id=\"globalConfirmMessage\" class=\"text-body-md text-tertiary\">Apakah Anda yakin?</p>\n                    </div>\n                </div>\n\n                <div class=\"flex justify-end gap-3\">\n                    <button \n                        onclick=\"window.closeGlobalConfirm()\"\n                        class=\"px-5 py-2.5 rounded-full border border-border text-on-surface hover:bg-neutral transition-colors text-label-lg font-semibold\"\n                    >\n                        Batal\n                    </button>\n                    <button \n                        id=\"globalConfirmBtn\"\n                        class=\"px-5 py-2.5 rounded-full bg-rose-600 hover:bg-rose-700 text-surface transition-colors text-label-lg font-semibold\"\n                    >\n                        Ya, Batalkan\n                    </button>\n                </div>\n            </div>\n        </div>\n\n        <script>\n            // Global Toast Notification function\n            window.showNotification = function(type, message) {\n                const container = document.getElementById('globalToastContainer');\n                if (!container) return;\n                const id = Date.now();\n                \n                let bgClass = '';\n                let iconSvg = '';\n                let progressBg = '';\n                \n                if (type === 'success') {\n                    bgClass = 'bg-emerald-50/95 border-emerald-200 text-emerald-800 dark:bg-emerald-950/95 dark:border-emerald-800 dark:text-emerald-200';\n                    iconSvg = '<svg class=\"w-5 h-5 text-emerald-600 dark:text-emerald-400\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\"/></svg>';\n                    progressBg = 'bg-emerald-500';\n                } else if (type === 'error' || type === 'danger') {\n                    bgClass = 'bg-rose-50/95 border-rose-200 text-rose-800 dark:bg-rose-950/95 dark:border-rose-800 dark:text-rose-200';\n                    iconSvg = '<svg class=\"w-5 h-5 text-rose-600 dark:text-rose-400\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z\"/></svg>';\n                    progressBg = 'bg-rose-500';\n                } else if (type === 'warning') {\n                    bgClass = 'bg-amber-50/95 border-amber-200 text-amber-800 dark:bg-amber-950/95 dark:border-amber-800 dark:text-amber-200';\n                    iconSvg = '<svg class=\"w-5 h-5 text-amber-600 dark:text-amber-400\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z\"/></svg>';\n                    progressBg = 'bg-amber-500';\n                } else {\n                    bgClass = 'bg-sky-50/95 border-sky-200 text-sky-800 dark:bg-sky-950/95 dark:border-sky-800 dark:text-sky-200';\n                    iconSvg = '<svg class=\"w-5 h-5 text-sky-600 dark:text-sky-400\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"/></svg>';\n                    progressBg = 'bg-sky-500';\n                }\n\n                const toast = document.createElement('div');\n                toast.id = `toast-${id}`;\n                toast.className = `relative flex gap-3 p-4 rounded-xl border shadow-lg backdrop-blur-md pointer-events-auto overflow-hidden transition-all duration-300 transform translate-x-full opacity-0 ${bgClass}`;\n                toast.innerHTML = `\n                    <div class=\"shrink-0\">${iconSvg}</div>\n                    <div class=\"flex-1\">\n                        <p class=\"text-sm font-semibold leading-5\">${message}</p>\n                    </div>\n                    <button onclick=\"document.getElementById('toast-${id}').remove()\" class=\"shrink-0 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors\">\n                        <svg class=\"w-4 h-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\"/></svg>\n                    </button>\n                    <div class=\"absolute bottom-0 left-0 h-1 ${progressBg}\" style=\"width: 100%; transition: width 5000ms linear;\"></div>\n                `;\n                \n                container.appendChild(toast);\n                \n                setTimeout(() => {\n                    toast.classList.remove('translate-x-full', 'opacity-0');\n                    toast.classList.add('translate-x-0', 'opacity-100');\n                    const progress = toast.querySelector('div:last-child');\n                    if (progress) progress.style.width = '0%';\n                }, 50);\n                \n                setTimeout(() => {\n                    if (document.getElementById(`toast-${id}`)) {\n                        toast.classList.remove('translate-x-0', 'opacity-100');\n                        toast.classList.add('translate-x-full', 'opacity-0');\n                        setTimeout(() => toast.remove(), 300);\n                    }\n                }, 5000);\n            };\n\n            // Global Confirmation Modal function\n            let globalConfirmCallback = null;\n\n            window.showConfirm = function(title, message, callback) {\n                document.getElementById('globalConfirmTitle').textContent = title;\n                document.getElementById('globalConfirmMessage').textContent = message;\n                globalConfirmCallback = callback;\n                \n                const modal = document.getElementById('globalConfirmModal');\n                modal.classList.remove('hidden');\n                modal.classList.add('flex');\n            };\n\n            window.closeGlobalConfirm = function() {\n                const modal = document.getElementById('globalConfirmModal');\n                modal.classList.remove('flex');\n                modal.classList.add('hidden');\n                globalConfirmCallback = null;\n            };\n\n            document.getElementById('globalConfirmBtn').addEventListener('click', () => {\n                if (globalConfirmCallback) {\n                    globalConfirmCallback();\n                }\n                window.closeGlobalConfirm();\n            });\n\n            // Trigger session alerts automatically on page load\n            document.addEventListener('DOMContentLoaded', () => {\n                                                            });\n        </script>\n\n        \n            </body>\n</html>\n"
+      tags:
+        - Autentikasi
+      security: []
+    post:
+      summary: 'Proses Login'
+      operationId: prosesLogin
+      description: 'Melakukan autentikasi kredensial pengguna dan memulai sesi baru.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Autentikasi
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Alamat email pengguna.'
+                  example: john@example.com
+                password:
+                  type: string
+                  description: 'Password pengguna.'
+                  example: password
+                remember:
+                  type: boolean
+                  description: 'Menandai agar sesi tetap aktif setelah browser ditutup.'
+                  example: true
+              required:
+                - email
+                - password
+      security: []
+  /forgot-password:
+    get:
+      summary: 'Halaman Lupa Password'
+      operationId: halamanLupaPassword
+      description: 'Menampilkan formulir untuk meminta link reset password.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <meta name=\"csrf-token\" content=\"s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE\">\n\n        <title>Garuda</title>\n        <link rel=\"icon\" type=\"image/svg+xml\" href=\"http://127.0.0.1:8000/images/logo.svg\">\n\n        <!-- Fonts -->\n        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n        <link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap\" rel=\"stylesheet\">\n\n        <!-- Scripts -->\n        <link rel=\"preload\" as=\"style\" href=\"http://127.0.0.1:8000/build/assets/app-CNV64zgk.css\" /><link rel=\"modulepreload\" as=\"script\" href=\"http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js\" /><link rel=\"stylesheet\" href=\"http://127.0.0.1:8000/build/assets/app-CNV64zgk.css\" data-navigate-track=\"reload\" /><script type=\"module\" src=\"http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js\" data-navigate-track=\"reload\"></script>    </head>\n    <body class=\"font-sans text-gray-900 antialiased\">\n        <div class=\"mb-4 text-sm text-gray-600\">\n        Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.\n    </div>\n\n    <!-- Session Status -->\n    \n    <form method=\"POST\" action=\"http://127.0.0.1:8000/forgot-password\">\n        <input type=\"hidden\" name=\"_token\" value=\"s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE\" autocomplete=\"off\">\n        <!-- Email Address -->\n        <div>\n            <label class=\"block font-medium text-sm text-gray-700\" for=\"email\">\n    Email\n</label>\n            <input  class=\"border-border focus:border-primary focus:ring-primary rounded-lg shadow-sm bg-surface text-on-surface block mt-1 w-full\" id=\"email\" type=\"email\" name=\"email\" required=\"required\" autofocus=\"autofocus\">\n                    </div>\n\n        <div class=\"flex items-center justify-end mt-4\">\n            <button type=\"submit\" class=\"inline-flex items-center px-6 py-2.5 bg-primary border border-transparent rounded-full font-semibold text-xs text-white uppercase tracking-widest hover:bg-primary-hover active:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition ease-in-out duration-150 shadow-sm\">\n    Email Password Reset Link\n</button>\n        </div>\n    </form>\n    </body>\n</html>"
+      tags:
+        - Autentikasi
+      security: []
+    post:
+      summary: 'Kirim Link Reset Password'
+      operationId: kirimLinkResetPassword
+      description: 'Mengirimkan surel (email) berisi link reset password kepada pengguna.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Autentikasi
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Alamat email akun yang ingin di-reset passwordnya.'
+                  example: john@example.com
+              required:
+                - email
+      security: []
+  '/reset-password/{token}':
+    get:
+      summary: 'Halaman Reset Password Baru'
+      operationId: halamanResetPasswordBaru
+      description: 'Menampilkan halaman formulir untuk mengisi password baru setelah menekan link reset.'
+      parameters:
+        -
+          in: query
+          name: token
+          description: 'Token reset password unik dari email.'
+          example: abcde12345
+          required: true
+          schema:
+            type: string
+            description: 'Token reset password unik dari email.'
+            example: abcde12345
+        -
+          in: query
+          name: email
+          description: 'Alamat email pengguna.'
+          example: john@example.com
+          required: true
+          schema:
+            type: string
+            description: 'Alamat email pengguna.'
+            example: john@example.com
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <meta name=\"csrf-token\" content=\"s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE\">\n\n        <title>Garuda</title>\n        <link rel=\"icon\" type=\"image/svg+xml\" href=\"http://127.0.0.1:8000/images/logo.svg\">\n\n        <!-- Fonts -->\n        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n        <link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap\" rel=\"stylesheet\">\n\n        <!-- Scripts -->\n        <link rel=\"preload\" as=\"style\" href=\"http://127.0.0.1:8000/build/assets/app-CNV64zgk.css\" /><link rel=\"modulepreload\" as=\"script\" href=\"http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js\" /><link rel=\"stylesheet\" href=\"http://127.0.0.1:8000/build/assets/app-CNV64zgk.css\" data-navigate-track=\"reload\" /><script type=\"module\" src=\"http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js\" data-navigate-track=\"reload\"></script>    </head>\n    <body class=\"font-sans text-gray-900 antialiased\">\n        <form method=\"POST\" action=\"http://127.0.0.1:8000/reset-password\">\n        <input type=\"hidden\" name=\"_token\" value=\"s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE\" autocomplete=\"off\">\n        <!-- Password Reset Token -->\n        <input type=\"hidden\" name=\"token\" value=\"architecto\">\n\n        <!-- Email Address -->\n        <div>\n            <label class=\"block font-medium text-sm text-gray-700\" for=\"email\">\n    Email\n</label>\n            <input  class=\"border-border focus:border-primary focus:ring-primary rounded-lg shadow-sm bg-surface text-on-surface block mt-1 w-full\" id=\"email\" type=\"email\" name=\"email\" value=\"john@example.com\" required=\"required\" autofocus=\"autofocus\" autocomplete=\"username\">\n                    </div>\n\n        <!-- Password -->\n        <div class=\"mt-4\">\n            <label class=\"block font-medium text-sm text-gray-700\" for=\"password\">\n    Password\n</label>\n            <input  class=\"border-border focus:border-primary focus:ring-primary rounded-lg shadow-sm bg-surface text-on-surface block mt-1 w-full\" id=\"password\" type=\"password\" name=\"password\" required=\"required\" autocomplete=\"new-password\">\n                    </div>\n\n        <!-- Confirm Password -->\n        <div class=\"mt-4\">\n            <label class=\"block font-medium text-sm text-gray-700\" for=\"password_confirmation\">\n    Confirm Password\n</label>\n\n            <input  class=\"border-border focus:border-primary focus:ring-primary rounded-lg shadow-sm bg-surface text-on-surface block mt-1 w-full\" id=\"password_confirmation\" type=\"password\" name=\"password_confirmation\" required=\"required\" autocomplete=\"new-password\">\n\n                    </div>\n\n        <div class=\"flex items-center justify-end mt-4\">\n            <button type=\"submit\" class=\"inline-flex items-center px-6 py-2.5 bg-primary border border-transparent rounded-full font-semibold text-xs text-white uppercase tracking-widest hover:bg-primary-hover active:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition ease-in-out duration-150 shadow-sm\">\n    Reset Password\n</button>\n        </div>\n    </form>\n    </body>\n</html>"
+      tags:
+        - Autentikasi
+      security: []
+    parameters:
+      -
+        in: path
+        name: token
+        description: ''
+        example: architecto
+        required: true
+        schema:
+          type: string
+  /reset-password:
+    post:
+      summary: 'Proses Simpan Password Baru'
+      operationId: prosesSimpanPasswordBaru
+      description: 'Menyimpan password baru pengguna setelah tervalidasi dengan token reset.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Autentikasi
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: 'Token reset password unik.'
+                  example: abcde12345
+                email:
+                  type: string
+                  description: 'Alamat email pengguna.'
+                  example: john@example.com
+                password:
+                  type: string
+                  description: 'Password baru minimal 8 karakter.'
+                  example: newpassword
+                password_confirmation:
+                  type: string
+                  description: 'Konfirmasi password baru.'
+                  example: newpassword
+              required:
+                - token
+                - email
+                - password
+                - password_confirmation
+      security: []
+  /confirm-password:
+    get:
+      summary: 'Halaman Konfirmasi Password'
+      operationId: halamanKonfirmasiPassword
+      description: 'Menampilkan formulir konfirmasi password sebelum mengakses area sensitif.'
+      parameters: []
+      responses:
+        302:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"refresh\" content=\"0;url='http://127.0.0.1:8000/login'\" />\n\n        <title>Redirecting to http://127.0.0.1:8000/login</title>\n    </head>\n    <body>\n        Redirecting to <a href=\"http://127.0.0.1:8000/login\">http://127.0.0.1:8000/login</a>.\n    </body>\n</html>"
+      tags:
+        - Autentikasi
+      security: []
+    post:
+      summary: 'Proses Konfirmasi Password'
+      operationId: prosesKonfirmasiPassword
+      description: 'Memverifikasi apakah password yang dimasukkan sesuai dengan pengguna saat ini.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Autentikasi
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  description: 'Password saat ini untuk diverifikasi.'
+                  example: password
+              required:
+                - password
+      security: []
+  /password:
+    put:
+      summary: 'Perbarui Password Pengguna'
+      operationId: perbaruiPasswordPengguna
+      description: 'Mengubah password pengguna yang sedang masuk setelah memverifikasi password saat ini.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Autentikasi
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_password:
+                  type: string
+                  description: 'Password pengguna saat ini.'
+                  example: password
+                password:
+                  type: string
+                  description: 'Password baru minimal 8 karakter.'
+                  example: newpassword
+                password_confirmation:
+                  type: string
+                  description: 'Konfirmasi password baru.'
+                  example: newpassword
+              required:
+                - current_password
+                - password
+                - password_confirmation
+      security: []
+  /logout:
+    post:
+      summary: 'Proses Logout'
+      operationId: prosesLogout
+      description: 'Mengeluarkan pengguna dari sistem dan mengakhiri sesi aktif.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Autentikasi
+      security: []
+  /dashboard:
+    get:
+      summary: 'Dashboard Pengguna'
+      operationId: dashboardPengguna
+      description: 'Menampilkan halaman dashboard untuk pengguna yang sudah login untuk mencari penerbangan.'
+      parameters:
+        -
+          in: query
+          name: departure_id
+          description: 'ID bandara keberangkatan.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'ID bandara keberangkatan.'
+            example: 1
+        -
+          in: query
+          name: arrival_id
+          description: 'ID bandara tujuan.'
+          example: 2
+          required: false
+          schema:
+            type: integer
+            description: 'ID bandara tujuan.'
+            example: 2
+        -
+          in: query
+          name: date
+          description: 'Tanggal keberangkatan (format Y-m-d).'
+          example: '2026-06-26'
+          required: false
+          schema:
+            type: string
+            description: 'Tanggal keberangkatan (format Y-m-d).'
+            example: '2026-06-26'
+        -
+          in: query
+          name: passengers
+          description: 'Jumlah penumpang (1-9).'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Jumlah penumpang (1-9).'
+            example: 1
+      responses:
+        302:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"refresh\" content=\"0;url='http://127.0.0.1:8000/login'\" />\n\n        <title>Redirecting to http://127.0.0.1:8000/login</title>\n    </head>\n    <body>\n        Redirecting to <a href=\"http://127.0.0.1:8000/login\">http://127.0.0.1:8000/login</a>.\n    </body>\n</html>"
+      tags:
+        - 'Dashboard Pelanggan'
+      security: []
+  '/filament/exports/{export_id}/download':
+    get:
+      summary: ''
+      operationId: getFilamentExportsExport_idDownload
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>Server Error</title>\n\n        <style>\n            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}code{font-family:monospace,monospace;font-size:1em}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}code{font-family:Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-gray-400{--border-opacity:1;border-color:#cbd5e0;border-color:rgba(203,213,224,var(--border-opacity))}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-xl{max-width:36rem}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.uppercase{text-transform:uppercase}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.tracking-wider{letter-spacing:.05em}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@-webkit-keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@-webkit-keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@-webkit-keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@-webkit-keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@media (min-width:640px){.sm\\:rounded-lg{border-radius:.5rem}.sm\\:block{display:block}.sm\\:items-center{align-items:center}.sm\\:justify-start{justify-content:flex-start}.sm\\:justify-between{justify-content:space-between}.sm\\:h-20{height:5rem}.sm\\:ml-0{margin-left:0}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:pt-0{padding-top:0}.sm\\:text-left{text-align:left}.sm\\:text-right{text-align:right}}@media (min-width:768px){.md\\:border-t-0{border-top-width:0}.md\\:border-l{border-left-width:1px}.md\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\\:text-gray-300 { --text-opacity: 1; color: #e2e8f0; color: rgba(226,232,240,var(--text-opacity)) }}\n        </style>\n\n        <style>\n            body {\n                font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n            }\n        </style>\n    </head>\n    <body class=\"antialiased bg-white text-black\">\n        <div class=\"relative flex items-top justify-center min-h-screen bg-white text-black sm:items-center sm:pt-0\" role=\"main\">\n            <div class=\"max-w-xl mx-auto sm:px-6 lg:px-8\">\n                <div class=\"flex items-center pt-8 sm:justify-start sm:pt-0\">\n                    <h1 class=\"px-4 text-lg text-black border-r border-gray-400\">\n                        500                    </h1>\n\n                    <div class=\"ml-4 text-lg text-black\">\n                        Server Error                    </div>\n                </div>\n            </div>\n        </div>\n    </body>\n</html>\n"
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: export_id
+        description: 'The ID of the export.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  '/filament/imports/{import_id}/failed-rows/download':
+    get:
+      summary: ''
+      operationId: getFilamentImportsImport_idFailedRowsDownload
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>Server Error</title>\n\n        <style>\n            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}code{font-family:monospace,monospace;font-size:1em}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}code{font-family:Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-gray-400{--border-opacity:1;border-color:#cbd5e0;border-color:rgba(203,213,224,var(--border-opacity))}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-xl{max-width:36rem}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.uppercase{text-transform:uppercase}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.tracking-wider{letter-spacing:.05em}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@-webkit-keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@-webkit-keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@-webkit-keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@-webkit-keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@media (min-width:640px){.sm\\:rounded-lg{border-radius:.5rem}.sm\\:block{display:block}.sm\\:items-center{align-items:center}.sm\\:justify-start{justify-content:flex-start}.sm\\:justify-between{justify-content:space-between}.sm\\:h-20{height:5rem}.sm\\:ml-0{margin-left:0}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:pt-0{padding-top:0}.sm\\:text-left{text-align:left}.sm\\:text-right{text-align:right}}@media (min-width:768px){.md\\:border-t-0{border-top-width:0}.md\\:border-l{border-left-width:1px}.md\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\\:text-gray-300 { --text-opacity: 1; color: #e2e8f0; color: rgba(226,232,240,var(--text-opacity)) }}\n        </style>\n\n        <style>\n            body {\n                font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n            }\n        </style>\n    </head>\n    <body class=\"antialiased bg-white text-black\">\n        <div class=\"relative flex items-top justify-center min-h-screen bg-white text-black sm:items-center sm:pt-0\" role=\"main\">\n            <div class=\"max-w-xl mx-auto sm:px-6 lg:px-8\">\n                <div class=\"flex items-center pt-8 sm:justify-start sm:pt-0\">\n                    <h1 class=\"px-4 text-lg text-black border-r border-gray-400\">\n                        500                    </h1>\n\n                    <div class=\"ml-4 text-lg text-black\">\n                        Server Error                    </div>\n                </div>\n            </div>\n        </div>\n    </body>\n</html>\n"
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: import_id
+        description: 'The ID of the import.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  /livewire-8ab57b58/update:
+    post:
+      summary: ''
+      operationId: postLivewire8ab57b58Update
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /livewire-8ab57b58/livewire.js:
+    get:
+      summary: ''
+      operationId: getLivewire8ab57b58LivewireJs
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: ''
+      tags:
+        - Endpoints
+      security: []
+  /livewire-8ab57b58/livewire.min.js.map:
+    get:
+      summary: ''
+      operationId: getLivewire8ab57b58LivewireMinJsMap
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: ''
+      tags:
+        - Endpoints
+      security: []
+  /livewire-8ab57b58/livewire.csp.min.js.map:
+    get:
+      summary: ''
+      operationId: getLivewire8ab57b58LivewireCspMinJsMap
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: ''
+      tags:
+        - Endpoints
+      security: []
+  /livewire-8ab57b58/upload-file:
+    post:
+      summary: ''
+      operationId: postLivewire8ab57b58UploadFile
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/livewire-8ab57b58/preview-file/{filename}':
+    get:
+      summary: ''
+      operationId: getLivewire8ab57b58PreviewFileFilename
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>Unauthorized</title>\n\n        <style>\n            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}code{font-family:monospace,monospace;font-size:1em}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}code{font-family:Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-gray-400{--border-opacity:1;border-color:#cbd5e0;border-color:rgba(203,213,224,var(--border-opacity))}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-xl{max-width:36rem}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.uppercase{text-transform:uppercase}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.tracking-wider{letter-spacing:.05em}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@-webkit-keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@-webkit-keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@-webkit-keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@-webkit-keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@media (min-width:640px){.sm\\:rounded-lg{border-radius:.5rem}.sm\\:block{display:block}.sm\\:items-center{align-items:center}.sm\\:justify-start{justify-content:flex-start}.sm\\:justify-between{justify-content:space-between}.sm\\:h-20{height:5rem}.sm\\:ml-0{margin-left:0}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:pt-0{padding-top:0}.sm\\:text-left{text-align:left}.sm\\:text-right{text-align:right}}@media (min-width:768px){.md\\:border-t-0{border-top-width:0}.md\\:border-l{border-left-width:1px}.md\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\\:text-gray-300 { --text-opacity: 1; color: #e2e8f0; color: rgba(226,232,240,var(--text-opacity)) }}\n        </style>\n\n        <style>\n            body {\n                font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n            }\n        </style>\n    </head>\n    <body class=\"antialiased bg-white text-black\">\n        <div class=\"relative flex items-top justify-center min-h-screen bg-white text-black sm:items-center sm:pt-0\" role=\"main\">\n            <div class=\"max-w-xl mx-auto sm:px-6 lg:px-8\">\n                <div class=\"flex items-center pt-8 sm:justify-start sm:pt-0\">\n                    <h1 class=\"px-4 text-lg text-black border-r border-gray-400\">\n                        401                    </h1>\n\n                    <div class=\"ml-4 text-lg text-black\">\n                        Unauthorized                    </div>\n                </div>\n            </div>\n        </div>\n    </body>\n</html>\n"
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: filename
+        description: ''
+        example: architecto
+        required: true
+        schema:
+          type: string
+  '/livewire-8ab57b58/js/{component}.js':
+    get:
+      summary: ''
+      operationId: getLivewire8ab57b58JsComponentJs
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>Server Error</title>\n\n        <style>\n            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}code{font-family:monospace,monospace;font-size:1em}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}code{font-family:Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-gray-400{--border-opacity:1;border-color:#cbd5e0;border-color:rgba(203,213,224,var(--border-opacity))}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-xl{max-width:36rem}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.uppercase{text-transform:uppercase}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.tracking-wider{letter-spacing:.05em}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@-webkit-keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@-webkit-keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@-webkit-keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@-webkit-keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@media (min-width:640px){.sm\\:rounded-lg{border-radius:.5rem}.sm\\:block{display:block}.sm\\:items-center{align-items:center}.sm\\:justify-start{justify-content:flex-start}.sm\\:justify-between{justify-content:space-between}.sm\\:h-20{height:5rem}.sm\\:ml-0{margin-left:0}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:pt-0{padding-top:0}.sm\\:text-left{text-align:left}.sm\\:text-right{text-align:right}}@media (min-width:768px){.md\\:border-t-0{border-top-width:0}.md\\:border-l{border-left-width:1px}.md\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\\:text-gray-300 { --text-opacity: 1; color: #e2e8f0; color: rgba(226,232,240,var(--text-opacity)) }}\n        </style>\n\n        <style>\n            body {\n                font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n            }\n        </style>\n    </head>\n    <body class=\"antialiased bg-white text-black\">\n        <div class=\"relative flex items-top justify-center min-h-screen bg-white text-black sm:items-center sm:pt-0\" role=\"main\">\n            <div class=\"max-w-xl mx-auto sm:px-6 lg:px-8\">\n                <div class=\"flex items-center pt-8 sm:justify-start sm:pt-0\">\n                    <h1 class=\"px-4 text-lg text-black border-r border-gray-400\">\n                        500                    </h1>\n\n                    <div class=\"ml-4 text-lg text-black\">\n                        Server Error                    </div>\n                </div>\n            </div>\n        </div>\n    </body>\n</html>\n"
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: component
+        description: ''
+        example: architecto
+        required: true
+        schema:
+          type: string
+  '/livewire-8ab57b58/css/{component}.css':
+    get:
+      summary: ''
+      operationId: getLivewire8ab57b58CssComponentCss
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>Server Error</title>\n\n        <style>\n            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}code{font-family:monospace,monospace;font-size:1em}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}code{font-family:Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-gray-400{--border-opacity:1;border-color:#cbd5e0;border-color:rgba(203,213,224,var(--border-opacity))}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-xl{max-width:36rem}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.uppercase{text-transform:uppercase}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.tracking-wider{letter-spacing:.05em}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@-webkit-keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@-webkit-keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@-webkit-keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@-webkit-keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@media (min-width:640px){.sm\\:rounded-lg{border-radius:.5rem}.sm\\:block{display:block}.sm\\:items-center{align-items:center}.sm\\:justify-start{justify-content:flex-start}.sm\\:justify-between{justify-content:space-between}.sm\\:h-20{height:5rem}.sm\\:ml-0{margin-left:0}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:pt-0{padding-top:0}.sm\\:text-left{text-align:left}.sm\\:text-right{text-align:right}}@media (min-width:768px){.md\\:border-t-0{border-top-width:0}.md\\:border-l{border-left-width:1px}.md\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\\:text-gray-300 { --text-opacity: 1; color: #e2e8f0; color: rgba(226,232,240,var(--text-opacity)) }}\n        </style>\n\n        <style>\n            body {\n                font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n            }\n        </style>\n    </head>\n    <body class=\"antialiased bg-white text-black\">\n        <div class=\"relative flex items-top justify-center min-h-screen bg-white text-black sm:items-center sm:pt-0\" role=\"main\">\n            <div class=\"max-w-xl mx-auto sm:px-6 lg:px-8\">\n                <div class=\"flex items-center pt-8 sm:justify-start sm:pt-0\">\n                    <h1 class=\"px-4 text-lg text-black border-r border-gray-400\">\n                        500                    </h1>\n\n                    <div class=\"ml-4 text-lg text-black\">\n                        Server Error                    </div>\n                </div>\n            </div>\n        </div>\n    </body>\n</html>\n"
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: component
+        description: ''
+        example: architecto
+        required: true
+        schema:
+          type: string
+  '/livewire-8ab57b58/css/{component}.global.css':
+    get:
+      summary: ''
+      operationId: getLivewire8ab57b58CssComponentGlobalCss
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>Server Error</title>\n\n        <style>\n            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}code{font-family:monospace,monospace;font-size:1em}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}code{font-family:Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-gray-400{--border-opacity:1;border-color:#cbd5e0;border-color:rgba(203,213,224,var(--border-opacity))}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-xl{max-width:36rem}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.uppercase{text-transform:uppercase}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.tracking-wider{letter-spacing:.05em}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@-webkit-keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@-webkit-keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@-webkit-keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@-webkit-keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@media (min-width:640px){.sm\\:rounded-lg{border-radius:.5rem}.sm\\:block{display:block}.sm\\:items-center{align-items:center}.sm\\:justify-start{justify-content:flex-start}.sm\\:justify-between{justify-content:space-between}.sm\\:h-20{height:5rem}.sm\\:ml-0{margin-left:0}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:pt-0{padding-top:0}.sm\\:text-left{text-align:left}.sm\\:text-right{text-align:right}}@media (min-width:768px){.md\\:border-t-0{border-top-width:0}.md\\:border-l{border-left-width:1px}.md\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\\:text-gray-300 { --text-opacity: 1; color: #e2e8f0; color: rgba(226,232,240,var(--text-opacity)) }}\n        </style>\n\n        <style>\n            body {\n                font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n            }\n        </style>\n    </head>\n    <body class=\"antialiased bg-white text-black\">\n        <div class=\"relative flex items-top justify-center min-h-screen bg-white text-black sm:items-center sm:pt-0\" role=\"main\">\n            <div class=\"max-w-xl mx-auto sm:px-6 lg:px-8\">\n                <div class=\"flex items-center pt-8 sm:justify-start sm:pt-0\">\n                    <h1 class=\"px-4 text-lg text-black border-r border-gray-400\">\n                        500                    </h1>\n\n                    <div class=\"ml-4 text-lg text-black\">\n                        Server Error                    </div>\n                </div>\n            </div>\n        </div>\n    </body>\n</html>\n"
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: component
+        description: ''
+        example: architecto
+        required: true
+        schema:
+          type: string
+  /up:
+    get:
+      summary: ''
+      operationId: getUp
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: up
+                properties:
+                  status:
+                    type: string
+                    example: up
+      tags:
+        - Endpoints
+      security: []
+  /verify-email:
+    get:
+      summary: 'Display the email verification prompt.'
+      operationId: displayTheEmailVerificationPrompt
+      description: ''
+      parameters: []
+      responses:
+        302:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"refresh\" content=\"0;url='http://127.0.0.1:8000/login'\" />\n\n        <title>Redirecting to http://127.0.0.1:8000/login</title>\n    </head>\n    <body>\n        Redirecting to <a href=\"http://127.0.0.1:8000/login\">http://127.0.0.1:8000/login</a>.\n    </body>\n</html>"
+      tags:
+        - Endpoints
+      security: []
+  '/verify-email/{id}/{hash}':
+    get:
+      summary: "Mark the authenticated user's email address as verified."
+      operationId: markTheAuthenticatedUsersEmailAddressAsVerified
+      description: ''
+      parameters: []
+      responses:
+        302:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"refresh\" content=\"0;url='http://127.0.0.1:8000/login'\" />\n\n        <title>Redirecting to http://127.0.0.1:8000/login</title>\n    </head>\n    <body>\n        Redirecting to <a href=\"http://127.0.0.1:8000/login\">http://127.0.0.1:8000/login</a>.\n    </body>\n</html>"
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the verify email.'
+        example: architecto
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: hash
+        description: ''
+        example: architecto
+        required: true
+        schema:
+          type: string
+  /email/verification-notification:
+    post:
+      summary: 'Send a new email verification notification.'
+      operationId: sendANewEmailVerificationNotification
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/storage/{path}':
+    get:
+      summary: ''
+      operationId: getStoragePath
+      description: ''
+      parameters: []
+      responses:
+        403:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>Forbidden</title>\n\n        <style>\n            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}code{font-family:monospace,monospace;font-size:1em}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}code{font-family:Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-gray-400{--border-opacity:1;border-color:#cbd5e0;border-color:rgba(203,213,224,var(--border-opacity))}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-xl{max-width:36rem}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.uppercase{text-transform:uppercase}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.tracking-wider{letter-spacing:.05em}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@-webkit-keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@-webkit-keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@-webkit-keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@-webkit-keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@media (min-width:640px){.sm\\:rounded-lg{border-radius:.5rem}.sm\\:block{display:block}.sm\\:items-center{align-items:center}.sm\\:justify-start{justify-content:flex-start}.sm\\:justify-between{justify-content:space-between}.sm\\:h-20{height:5rem}.sm\\:ml-0{margin-left:0}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:pt-0{padding-top:0}.sm\\:text-left{text-align:left}.sm\\:text-right{text-align:right}}@media (min-width:768px){.md\\:border-t-0{border-top-width:0}.md\\:border-l{border-left-width:1px}.md\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\\:text-gray-300 { --text-opacity: 1; color: #e2e8f0; color: rgba(226,232,240,var(--text-opacity)) }}\n        </style>\n\n        <style>\n            body {\n                font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n            }\n        </style>\n    </head>\n    <body class=\"antialiased bg-white text-black\">\n        <div class=\"relative flex items-top justify-center min-h-screen bg-white text-black sm:items-center sm:pt-0\" role=\"main\">\n            <div class=\"max-w-xl mx-auto sm:px-6 lg:px-8\">\n                <div class=\"flex items-center pt-8 sm:justify-start sm:pt-0\">\n                    <h1 class=\"px-4 text-lg text-black border-r border-gray-400\">\n                        403                    </h1>\n\n                    <div class=\"ml-4 text-lg text-black\">\n                        Forbidden                    </div>\n                </div>\n            </div>\n        </div>\n    </body>\n</html>\n"
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putStoragePath
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: path
+        description: ''
+        example: '|{+-0p'
+        required: true
+        schema:
+          type: string
+  /:
+    get:
+      summary: 'Halaman Utama Publik'
+      operationId: halamanUtamaPublik
+      description: 'Menampilkan halaman utama publik dengan form pencarian penerbangan dan bagian promosi/informasi situs.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '(HTML View) Halaman landing page'
+      tags:
+        - 'Halaman Utama'
+      security: []
+  /midtrans/webhook:
+    post:
+      summary: 'Webhook Midtrans'
+      operationId: webhookMidtrans
+      description: 'Menerima notifikasi status pembayaran dari server Midtrans (asinkron).'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: ok
+                properties:
+                  status:
+                    type: string
+                    example: ok
+      tags:
+        - Pembayaran
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                transaction_status:
+                  type: string
+                  description: 'Status transaksi (settlement, capture, pending, deny, cancel, expire).'
+                  example: settlement
+                order_id:
+                  type: string
+                  description: 'Kode order unik (kode booking).'
+                  example: GRD-ABCD1234
+                payment_type:
+                  type: string
+                  description: 'Tipe pembayaran.'
+                  example: gopay
+                gross_amount:
+                  type: string
+                  description: 'Jumlah total pembayaran.'
+                  example: '1250000.00'
+                signature_key:
+                  type: string
+                  description: 'Signature SHA512 key untuk validasi data.'
+                  example: abc123xyz...
+              required:
+                - transaction_status
+                - order_id
+                - payment_type
+                - gross_amount
+                - signature_key
+      security: []
+  '/booking/{transaction_id}/payment':
+    get:
+      summary: 'Halaman Pembayaran'
+      operationId: halamanPembayaran
+      description: 'Menampilkan halaman pembayaran dengan snap token Midtrans.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '(HTML View) Halaman pembayaran terintegrasi Midtrans Snap'
+      tags:
+        - Pembayaran
+      security: []
+    parameters:
+      -
+        in: path
+        name: transaction_id
+        description: 'The ID of the transaction.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: transaction
+        description: 'ID transaksi.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/booking/{transaction_id}/finish':
+    get:
+      summary: 'Callback Halaman Selesai Pembayaran'
+      operationId: callbackHalamanSelesaiPembayaran
+      description: 'Endpoint callback halaman sukses setelah pengguna menyelesaikan transaksi di Midtrans.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: paid
+                  redirect_url: 'http://127.0.0.1:8000/booking/1'
+                properties:
+                  status:
+                    type: string
+                    example: paid
+                  redirect_url:
+                    type: string
+                    example: 'http://127.0.0.1:8000/booking/1'
+      tags:
+        - Pembayaran
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                transaction_status:
+                  type: string
+                  description: 'Status transaksi dari Midtrans callback (jika POST via ajax).'
+                  example: settlement
+                payment_type:
+                  type: string
+                  description: 'Tipe pembayaran dari Midtrans callback (jika POST via ajax).'
+                  example: qris
+      security: []
+    parameters:
+      -
+        in: path
+        name: transaction_id
+        description: 'The ID of the transaction.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: transaction
+        description: 'ID transaksi.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/booking/{transaction_id}/pay-bank':
+    post:
+      summary: 'Metode Pembayaran Bank Transfer'
+      operationId: metodePembayaranBankTransfer
+      description: 'Memilih metode transfer bank manual (non-Midtrans) untuk pemesanan pending.'
+      parameters: []
+      responses:
+        302:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'Redirect ke detail pemesanan'
+      tags:
+        - Pembayaran
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bank:
+                  type: string
+                  description: 'Bank pilihan (mandiri, bca, bni, bsi).'
+                  example: mandiri
+              required:
+                - bank
+      security: []
+    parameters:
+      -
+        in: path
+        name: transaction_id
+        description: 'The ID of the transaction.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: transaction
+        description: 'ID transaksi.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/ajax/payment-status/{transaction_id}':
+    get:
+      summary: 'Polling Status Pembayaran (AJAX)'
+      operationId: pollingStatusPembayaranAJAX
+      description: 'Memeriksa status transaksi pembayaran secara real-time dari halaman snap.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: paid
+                  redirect_url: 'http://127.0.0.1:8000/booking/1'
+                properties:
+                  status:
+                    type: string
+                    example: paid
+                  redirect_url:
+                    type: string
+                    example: 'http://127.0.0.1:8000/booking/1'
+      tags:
+        - Pembayaran
+      security: []
+    parameters:
+      -
+        in: path
+        name: transaction_id
+        description: 'The ID of the transaction.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: transaction
+        description: 'ID transaksi.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/flight/{flight_flight_number}/choose-tier':
+    get:
+      summary: 'Pilih Kelas Penerbangan'
+      operationId: pilihKelasPenerbangan
+      description: 'Menampilkan pilihan kelas penerbangan (Economy, Business, dll.) beserta harga dan fasilitas masing-masing.'
+      parameters:
+        -
+          in: query
+          name: passengers
+          description: 'Jumlah penumpang.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Jumlah penumpang.'
+            example: 1
+      responses:
+        302:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"refresh\" content=\"0;url='http://127.0.0.1:8000/login'\" />\n\n        <title>Redirecting to http://127.0.0.1:8000/login</title>\n    </head>\n    <body>\n        Redirecting to <a href=\"http://127.0.0.1:8000/login\">http://127.0.0.1:8000/login</a>.\n    </body>\n</html>"
+      tags:
+        - 'Pemesanan Tiket'
+      security: []
+    parameters:
+      -
+        in: path
+        name: flight_flight_number
+        description: ''
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: flight
+        description: 'Nomor penerbangan.'
+        example: GA-401
+        required: true
+        schema:
+          type: string
+  '/flight/{flight_flight_number}/booking/{flightClass_id}/choose-seat':
+    get:
+      summary: 'Tampilkan Pemilihan Kursi'
+      operationId: tampilkanPemilihanKursi
+      description: 'Halaman untuk memilih kursi kosong pada penerbangan dan kelas yang dipilih.'
+      parameters:
+        -
+          in: query
+          name: passengers
+          description: 'Jumlah penumpang.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Jumlah penumpang.'
+            example: 1
+      responses:
+        302:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"refresh\" content=\"0;url='http://127.0.0.1:8000/login'\" />\n\n        <title>Redirecting to http://127.0.0.1:8000/login</title>\n    </head>\n    <body>\n        Redirecting to <a href=\"http://127.0.0.1:8000/login\">http://127.0.0.1:8000/login</a>.\n    </body>\n</html>"
+      tags:
+        - 'Pemesanan Tiket'
+      security: []
+    parameters:
+      -
+        in: path
+        name: flight_flight_number
+        description: ''
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: flightClass_id
+        description: 'The ID of the flightClass.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: flight
+        description: 'Nomor penerbangan.'
+        example: GA-401
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: flightClass
+        description: 'ID kelas penerbangan.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /booking/create:
+    get:
+      summary: 'Form Pengisian Data Penumpang'
+      operationId: formPengisianDataPenumpang
+      description: 'Halaman formulir untuk memasukkan informasi penumpang setelah memilih kursi.'
+      parameters:
+        -
+          in: query
+          name: flight_id
+          description: 'ID penerbangan.'
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: 'ID penerbangan.'
+            example: 1
+        -
+          in: query
+          name: flight_class_id
+          description: 'ID kelas penerbangan.'
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: 'ID kelas penerbangan.'
+            example: 1
+        -
+          in: query
+          name: passengers
+          description: 'Jumlah penumpang.'
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: 'Jumlah penumpang.'
+            example: 1
+        -
+          in: query
+          name: seats
+          description: 'Daftar nama kursi yang dipilih (dipisahkan koma).'
+          example: GA-401-1A
+          required: true
+          schema:
+            type: string
+            description: 'Daftar nama kursi yang dipilih (dipisahkan koma).'
+            example: GA-401-1A
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '(HTML View) Halaman pengisian form pemesanan'
+      tags:
+        - 'Pemesanan Tiket'
+      security: []
+  /booking/store:
+    post:
+      summary: 'Simpan Transaksi Pemesanan'
+      operationId: simpanTransaksiPemesanan
+      description: 'Menyimpan transaksi pemesanan baru ke database dan memesan kursi.'
+      parameters: []
+      responses:
+        302:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'Redirect ke halaman pembayaran'
+      tags:
+        - 'Pemesanan Tiket'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                flight_id:
+                  type: integer
+                  description: 'ID penerbangan.'
+                  example: 1
+                flight_class_id:
+                  type: integer
+                  description: 'ID kelas penerbangan.'
+                  example: 1
+                name:
+                  type: string
+                  description: 'Nama lengkap pemesan.'
+                  example: 'Ayu Traveler'
+                email:
+                  type: string
+                  description: 'Email pemesan untuk pengiriman e-ticket.'
+                  example: ayu@example.com
+                phone:
+                  type: string
+                  description: 'Nomor telepon pemesan.'
+                  example: '08123456789'
+                number_of_passengers:
+                  type: integer
+                  description: 'Jumlah penumpang (1-9).'
+                  example: 1
+                passengers:
+                  type: array
+                  description: 'Daftar data penumpang.'
+                  example:
+                    - architecto
+                  items:
+                    type: string
+                promo_code:
+                  type: string
+                  description: 'Kode promo (opsional).'
+                  example: GARUDA10
+                  nullable: true
+              required:
+                - flight_id
+                - flight_class_id
+                - name
+                - email
+                - phone
+                - number_of_passengers
+                - passengers
+      security: []
+  /booking/check:
+    get:
+      summary: 'Cek Booking via Kode'
+      operationId: cekBookingViaKode
+      description: 'Mencari rincian pemesanan berdasarkan kode booking unik.'
+      parameters:
+        -
+          in: query
+          name: code
+          description: 'Kode booking (contoh: GRD-XXXX).'
+          example: GRD-ABCDEF12
+          required: true
+          schema:
+            type: string
+            description: 'Kode booking (contoh: GRD-XXXX).'
+            example: GRD-ABCDEF12
+      responses:
+        302:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                oneOf:
+                  -
+                    description: ''
+                    type: string
+                    example: 'Redirect ke halaman rincian transaksi'
+                  -
+                    description: ''
+                    type: string
+                    example: "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"refresh\" content=\"0;url='http://127.0.0.1:8000/login'\" />\n\n        <title>Redirecting to http://127.0.0.1:8000/login</title>\n    </head>\n    <body>\n        Redirecting to <a href=\"http://127.0.0.1:8000/login\">http://127.0.0.1:8000/login</a>.\n    </body>\n</html>"
+      tags:
+        - 'Pemesanan Tiket'
+      security: []
+  '/booking/{transaction_id}':
+    get:
+      summary: 'Detail Transaksi Pemesanan'
+      operationId: detailTransaksiPemesanan
+      description: 'Menampilkan informasi rincian pemesanan beserta status dan e-ticket (jika lunas).'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '(HTML View) Halaman rincian pemesanan'
+      tags:
+        - 'Pemesanan Tiket'
+      security: []
+    parameters:
+      -
+        in: path
+        name: transaction_id
+        description: 'The ID of the transaction.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: transaction
+        description: 'ID transaksi.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/booking/{transaction_id}/cancel':
+    post:
+      summary: 'Batalkan Pemesanan'
+      operationId: batalkanPemesanan
+      description: 'Membatalkan transaksi pemesanan yang masih pending (belum dibayar).'
+      parameters: []
+      responses:
+        302:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'Redirect ke halaman riwayat pesanan'
+      tags:
+        - 'Pemesanan Tiket'
+      security: []
+    parameters:
+      -
+        in: path
+        name: transaction_id
+        description: 'The ID of the transaction.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: transaction
+        description: 'ID transaksi.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /my-bookings:
+    get:
+      summary: 'Riwayat Pemesanan Pengguna'
+      operationId: riwayatPemesananPengguna
+      description: 'Menampilkan daftar seluruh transaksi/pemesanan tiket dari pengguna yang login.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '(HTML View) Halaman daftar seluruh riwayat pemesanan pelanggan'
+      tags:
+        - 'Pemesanan Tiket'
+      security: []
+  /ajax/seats:
+    get:
+      summary: 'Polling Ketersediaan Kursi (AJAX)'
+      operationId: pollingKetersediaanKursiAJAX
+      description: 'Memeriksa daftar seluruh kursi beserta status ketersediaannya secara real-time.'
+      parameters:
+        -
+          in: query
+          name: flight_id
+          description: 'ID penerbangan.'
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: 'ID penerbangan.'
+            example: 1
+        -
+          in: query
+          name: class_type
+          description: 'Tipe kelas (economy, business).'
+          example: economy
+          required: true
+          schema:
+            type: string
+            description: 'Tipe kelas (economy, business).'
+            example: economy
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  seats:
+                    -
+                      id: 1
+                      name: 1A
+                      available: true
+                      row: 1
+                      column: A
+                properties:
+                  seats:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 1A
+                        available: true
+                        row: 1
+                        column: A
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: 1A
+                        available:
+                          type: boolean
+                          example: true
+                        row:
+                          type: integer
+                          example: 1
+                        column:
+                          type: string
+                          example: A
+      tags:
+        - 'Pemesanan Tiket'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                flight_id:
+                  type: string
+                  description: 'Must match an existing stored value.'
+                  example: architecto
+                class_type:
+                  type: string
+                  description: ''
+                  example: business
+                  enum:
+                    - economy
+                    - business
+              required:
+                - flight_id
+                - class_type
+      security: []
+  /api/airports:
+    get:
+      summary: 'Cari Bandara'
+      operationId: cariBandara
+      description: 'Endpoint untuk mencari bandara berdasarkan nama kota, nama bandara, atau kode IATA.'
+      parameters:
+        -
+          in: query
+          name: search
+          description: 'Kata kunci pencarian bandara.'
+          example: Soekarno
+          required: false
+          schema:
+            type: string
+            description: 'Kata kunci pencarian bandara.'
+            example: Soekarno
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 1
+                    iata_code:
+                      type: string
+                      example: CGK
+                    name:
+                      type: string
+                      example: 'Soekarno-Hatta International Airport'
+                    city:
+                      type: string
+                      example: Jakarta
+                    country:
+                      type: string
+                      example: Indonesia
+                example:
+                  -
+                    id: 1
+                    iata_code: CGK
+                    name: 'Soekarno-Hatta International Airport'
+                    city: Jakarta
+                    country: Indonesia
+      tags:
+        - Pencarian
+      security: []
+  /flights:
+    get:
+      summary: 'Cari Penerbangan'
+      operationId: cariPenerbangan
+      description: 'Mencari penerbangan yang tersedia berdasarkan bandara keberangkatan, tujuan, tanggal, dan filter lainnya.'
+      parameters:
+        -
+          in: query
+          name: departure_id
+          description: 'ID bandara keberangkatan.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'ID bandara keberangkatan.'
+            example: 1
+        -
+          in: query
+          name: arrival_id
+          description: 'ID bandara tujuan.'
+          example: 2
+          required: false
+          schema:
+            type: integer
+            description: 'ID bandara tujuan.'
+            example: 2
+        -
+          in: query
+          name: date
+          description: 'Tanggal keberangkatan (format Y-m-d).'
+          example: '2026-06-26'
+          required: false
+          schema:
+            type: string
+            description: 'Tanggal keberangkatan (format Y-m-d).'
+            example: '2026-06-26'
+        -
+          in: query
+          name: passengers
+          description: 'Jumlah kursi/penumpang yang dipesan.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Jumlah kursi/penumpang yang dipesan.'
+            example: 1
+        -
+          in: query
+          name: airline_id
+          description: 'ID maskapai untuk filter (opsional).'
+          example:
+            - 1
+          required: false
+          schema:
+            type: array
+            description: 'ID maskapai untuk filter (opsional).'
+            example:
+              - 1
+            items:
+              type: integer
+        -
+          in: query
+          name: facility_id
+          description: 'ID fasilitas untuk filter (opsional).'
+          example:
+            - 1
+            - 2
+          required: false
+          schema:
+            type: array
+            description: 'ID fasilitas untuk filter (opsional).'
+            example:
+              - 1
+              - 2
+            items:
+              type: integer
+        -
+          in: query
+          name: transit_type
+          description: 'Tipe transit: direct, transit_1x, transit_2x (opsional).'
+          example:
+            - direct
+          required: false
+          schema:
+            type: array
+            description: 'Tipe transit: direct, transit_1x, transit_2x (opsional).'
+            example:
+              - direct
+            items:
+              type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <meta name=\"csrf-token\" content=\"s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE\">\n\n        <title>Garuda</title>\n        <link rel=\"icon\" type=\"image/svg+xml\" href=\"http://127.0.0.1:8000/images/logo.svg\">\n\n        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n        <link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap\" rel=\"stylesheet\">\n        <link rel=\"preload\" as=\"style\" href=\"http://127.0.0.1:8000/build/assets/app-CNV64zgk.css\" /><link rel=\"stylesheet\" href=\"http://127.0.0.1:8000/build/assets/app-CNV64zgk.css\" data-navigate-track=\"reload\" />                    <link rel=\"modulepreload\" as=\"script\" href=\"http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js\" /><script type=\"module\" src=\"http://127.0.0.1:8000/build/assets/app-DVI7KK-T.js\" data-navigate-track=\"reload\"></script>                <!-- Livewire Styles --><style >[wire\\:loading][wire\\:loading], [wire\\:loading\\.delay][wire\\:loading\\.delay], [wire\\:loading\\.list-item][wire\\:loading\\.list-item], [wire\\:loading\\.inline-block][wire\\:loading\\.inline-block], [wire\\:loading\\.inline][wire\\:loading\\.inline], [wire\\:loading\\.block][wire\\:loading\\.block], [wire\\:loading\\.flex][wire\\:loading\\.flex], [wire\\:loading\\.table][wire\\:loading\\.table], [wire\\:loading\\.grid][wire\\:loading\\.grid], [wire\\:loading\\.inline-flex][wire\\:loading\\.inline-flex] {display: none;}[wire\\:loading\\.delay\\.none][wire\\:loading\\.delay\\.none], [wire\\:loading\\.delay\\.shortest][wire\\:loading\\.delay\\.shortest], [wire\\:loading\\.delay\\.shorter][wire\\:loading\\.delay\\.shorter], [wire\\:loading\\.delay\\.short][wire\\:loading\\.delay\\.short], [wire\\:loading\\.delay\\.default][wire\\:loading\\.delay\\.default], [wire\\:loading\\.delay\\.long][wire\\:loading\\.delay\\.long], [wire\\:loading\\.delay\\.longer][wire\\:loading\\.delay\\.longer], [wire\\:loading\\.delay\\.longest][wire\\:loading\\.delay\\.longest] {display: none;}[wire\\:offline][wire\\:offline] {display: none;}[wire\\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}[wire\\:cloak] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>\n        <style>[x-cloak] { display: none !important; }</style>\n    </head>\n    <body\n        class=\"bg-cover bg-center bg-fixed bg-no-repeat\"\n        style=\"background-image: url('http://127.0.0.1:8000/images/WhatsApp Image 2026-06-14 at 16.52.35.webp');\">\n                            <nav x-data=\"{ open: false }\" class=\"sticky top-0 z-40 bg-surface/95 backdrop-blur border-b border-border/80\">\n    <div class=\"max-w-7xl mx-auto px-6\">\n        <div class=\"flex justify-between items-center h-14\">\n            <div class=\"flex items-center gap-8 h-full\">\n                <a href=\"http://127.0.0.1:8000\" wire:navigate class=\"flex items-center gap-3\">\n                    <img src=\"http://127.0.0.1:8000/images/logo.svg\"\n                         alt=\"Garuda Indonesia\"\n                         class=\"w-8 h-8 object-contain\">\n                    <span class=\"font-display font-bold text-headline-sm text-primary tracking-wide\">Garuda</span>\n                </a>\n\n                <div class=\"hidden sm:flex items-center gap-6 h-full\">\n                    <a href=\"http://127.0.0.1:8000\" wire:navigate\n                       class=\"h-full flex items-center border-b-2 border-transparent text-on-surface hover:text-primary transition-colors text-body-md\">\n                        Beranda\n                    </a>\n                    <a href=\"http://127.0.0.1:8000/flights\" wire:navigate\n                       class=\"h-full flex items-center border-b-2 border-primary text-primary font-semibold transition-colors text-body-md\">\n                        Penerbangan\n                    </a>\n                                    </div>\n            </div>\n\n            <div class=\"flex items-center gap-3\">\n                                    <a href=\"http://127.0.0.1:8000/login\" wire:navigate class=\"text-nav-link text-on-surface hover:text-accent transition-colors\">Masuk</a>\n                    <a href=\"http://127.0.0.1:8000/register\" class=\"inline-flex items-center justify-center gap-2 font-medium transition-colors bg-accent text-surface border border-transparent rounded-full hover:bg-accent-hover shadow-sm px-6 py-2.5 text-label-lg h-10\" wire:navigate=\"\">\n        Daftar\n    </a>\n                \n                <button @click=\"open = ! open\" class=\"sm:hidden p-2 text-tertiary hover:text-primary\">\n                    <svg class=\"w-5 h-5\" stroke=\"currentColor\" fill=\"none\" viewBox=\"0 0 24 24\">\n                        <path :class=\"{'hidden': open, 'inline-flex': ! open }\" class=\"inline-flex\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4 6h16M4 12h16M4 18h16\"/>\n                        <path :class=\"{'hidden': ! open, 'inline-flex': open }\" class=\"hidden\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\"/>\n                    </svg>\n                </button>\n            </div>\n        </div>\n    </div>\n\n    <div :class=\"{'block': open, 'hidden': ! open}\" class=\"hidden sm:hidden border-t border-border\">\n        <div class=\"px-4 py-3 space-y-2\">\n            <a href=\"http://127.0.0.1:8000\" wire:navigate class=\"block text-nav-link text-on-surface hover:text-primary\">Beranda</a>\n            <a href=\"http://127.0.0.1:8000/flights\" wire:navigate class=\"block text-nav-link text-primary font-semibold\">Penerbangan</a>\n                    </div>\n    </div>\n</nav>\n            \n            \n            <main>\n                <div class=\"max-w-7xl mx-auto px-6 py-10 space-y-6\">\n\n            \n        <div class=\"bg-surface border border-border rounded-lg shadow-sm p-6\">\n    <div class=\"flex gap-8 items-center flex-wrap\">\n                <div>\n                    <p class=\"text-label-sm text-tertiary\">Keberangkatan</p>\n                    <p class=\"font-display text-headline-sm text-primary\">CGK</p>\n                </div>\n                <svg class=\"w-5 h-5 text-tertiary\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                    <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17 8l4 4m0 0l-4 4m4-4H3\"/>\n                </svg>\n                <div>\n                    <p class=\"text-label-sm text-tertiary\">Kedatangan</p>\n                    <p class=\"font-display text-headline-sm text-primary\">DPS</p>\n                </div>\n                <div class=\"w-px h-8 bg-border hidden sm:block\"></div>\n                <div>\n                    <p class=\"text-label-sm text-tertiary\">Tanggal</p>\n                    <p class=\"font-display text-headline-sm text-primary\">2026-06-26</p>\n                </div>\n                <div class=\"w-px h-8 bg-border hidden sm:block\"></div>\n                <div>\n                    <p class=\"text-label-sm text-tertiary\">Penumpang</p>\n                    <p class=\"font-display text-headline-sm text-primary\">1 orang</p>\n                </div>\n                <a href=\"http://127.0.0.1:8000/flights\" class=\"inline-flex items-center justify-center gap-2 font-medium transition-colors bg-transparent text-primary border border-primary rounded-full hover:bg-primary-tint px-6 py-2.5 text-label-lg h-10 ml-auto\">\n        Ubah Pencarian\n    </a>\n            </div>\n</div>\n    \n    <div class=\"flex flex-col lg:flex-row gap-6 items-start\">\n        \n        <form method=\"GET\" action=\"http://127.0.0.1:8000/flights\" id=\"filter-form\" class=\"w-full lg:w-64 shrink-0\">\n            <input type=\"hidden\" name=\"departure_id\" value=\"1\">\n            <input type=\"hidden\" name=\"arrival_id\"   value=\"2\">\n            <input type=\"hidden\" name=\"date\"         value=\"2026-06-26\">\n            <input type=\"hidden\" name=\"passengers\"   value=\"1\">\n\n            <div class=\"bg-surface border border-border rounded-lg shadow-sm p-6 space-y-5\">\n    <h3 class=\"font-display text-headline-sm text-primary\">Filter</h3>\n\n                <div>\n                    <p class=\"text-label-md text-primary mb-2\">Tipe Penerbangan</p>\n                                            <label class=\"flex items-center gap-2 text-body-sm py-1 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"transit_type[]\" value=\"direct\"\n                                checked\n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            Langsung\n                        </label>\n                                            <label class=\"flex items-center gap-2 text-body-sm py-1 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"transit_type[]\" value=\"transit_1x\"\n                                \n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            Transit 1x\n                        </label>\n                                            <label class=\"flex items-center gap-2 text-body-sm py-1 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"transit_type[]\" value=\"transit_2x\"\n                                \n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            Transit 2x\n                        </label>\n                                    </div>\n\n                <hr class=\"border-border\">\n\n                <div>\n                    <p class=\"text-label-md text-primary mb-2\">Maskapai</p>\n                                            <label class=\"flex items-center gap-3 py-2 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"airline_id[]\" value=\"3\"\n                                \n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4 shrink-0\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            <img src=\"http://127.0.0.1:8000/images/logo.svg\" alt=\"Batik Air\" class=\"h-6 w-12 object-contain shrink-0\">\n                            <div class=\"text-body-sm\">\n                                <div class=\"font-medium text-primary\">Batik Air</div>\n                                <div class=\"text-label-sm text-tertiary\">Tersedia</div>\n                            </div>\n                        </label>\n                                            <label class=\"flex items-center gap-3 py-2 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"airline_id[]\" value=\"2\"\n                                \n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4 shrink-0\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            <img src=\"http://127.0.0.1:8000/images/logo.svg\" alt=\"Citilink\" class=\"h-6 w-12 object-contain shrink-0\">\n                            <div class=\"text-body-sm\">\n                                <div class=\"font-medium text-primary\">Citilink</div>\n                                <div class=\"text-label-sm text-tertiary\">Tersedia</div>\n                            </div>\n                        </label>\n                                            <label class=\"flex items-center gap-3 py-2 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"airline_id[]\" value=\"1\"\n                                checked\n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4 shrink-0\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            <img src=\"http://127.0.0.1:8000/images/logo.svg\" alt=\"Garuda Indonesia\" class=\"h-6 w-12 object-contain shrink-0\">\n                            <div class=\"text-body-sm\">\n                                <div class=\"font-medium text-primary\">Garuda Indonesia</div>\n                                <div class=\"text-label-sm text-tertiary\">Tersedia</div>\n                            </div>\n                        </label>\n                                            <label class=\"flex items-center gap-3 py-2 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"airline_id[]\" value=\"6\"\n                                \n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4 shrink-0\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            <img src=\"http://127.0.0.1:8000/images/logo.svg\" alt=\"Indonesia AirAsia\" class=\"h-6 w-12 object-contain shrink-0\">\n                            <div class=\"text-body-sm\">\n                                <div class=\"font-medium text-primary\">Indonesia AirAsia</div>\n                                <div class=\"text-label-sm text-tertiary\">Tersedia</div>\n                            </div>\n                        </label>\n                                            <label class=\"flex items-center gap-3 py-2 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"airline_id[]\" value=\"4\"\n                                \n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4 shrink-0\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            <img src=\"http://127.0.0.1:8000/images/logo.svg\" alt=\"Lion Air\" class=\"h-6 w-12 object-contain shrink-0\">\n                            <div class=\"text-body-sm\">\n                                <div class=\"font-medium text-primary\">Lion Air</div>\n                                <div class=\"text-label-sm text-tertiary\">Tersedia</div>\n                            </div>\n                        </label>\n                                            <label class=\"flex items-center gap-3 py-2 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"airline_id[]\" value=\"5\"\n                                \n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4 shrink-0\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            <img src=\"http://127.0.0.1:8000/images/logo.svg\" alt=\"Singapore Airlines\" class=\"h-6 w-12 object-contain shrink-0\">\n                            <div class=\"text-body-sm\">\n                                <div class=\"font-medium text-primary\">Singapore Airlines</div>\n                                <div class=\"text-label-sm text-tertiary\">Tersedia</div>\n                            </div>\n                        </label>\n                                            <label class=\"flex items-center gap-3 py-2 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"airline_id[]\" value=\"7\"\n                                \n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4 shrink-0\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            <img src=\"http://127.0.0.1:8000/images/logo.svg\" alt=\"Sriwijaya Air\" class=\"h-6 w-12 object-contain shrink-0\">\n                            <div class=\"text-body-sm\">\n                                <div class=\"font-medium text-primary\">Sriwijaya Air</div>\n                                <div class=\"text-label-sm text-tertiary\">Tersedia</div>\n                            </div>\n                        </label>\n                                    </div>\n\n                <hr class=\"border-border\">\n\n                <div>\n                    <p class=\"text-label-md text-primary mb-2\">Fasilitas</p>\n                                            <label class=\"flex items-center gap-2 text-body-sm py-1 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"facility_id[]\" value=\"4\"\n                                \n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            <img src=\"http://127.0.0.1:8000/images/logo.svg\" alt=\"Akses Lounge\" class=\"w-4 h-4 object-contain\">\n                            <span>Akses Lounge</span>\n                        </label>\n                                            <label class=\"flex items-center gap-2 text-body-sm py-1 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"facility_id[]\" value=\"1\"\n                                checked\n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            <img src=\"http://127.0.0.1:8000/images/logo.svg\" alt=\"Bagasi Ekstra\" class=\"w-4 h-4 object-contain\">\n                            <span>Bagasi Ekstra</span>\n                        </label>\n                                            <label class=\"flex items-center gap-2 text-body-sm py-1 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"facility_id[]\" value=\"3\"\n                                \n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            <img src=\"http://127.0.0.1:8000/images/logo.svg\" alt=\"Makanan di Pesawat\" class=\"w-4 h-4 object-contain\">\n                            <span>Makanan di Pesawat</span>\n                        </label>\n                                            <label class=\"flex items-center gap-2 text-body-sm py-1 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"facility_id[]\" value=\"2\"\n                                checked\n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            <img src=\"http://127.0.0.1:8000/images/logo.svg\" alt=\"Prioritas Boarding\" class=\"w-4 h-4 object-contain\">\n                            <span>Prioritas Boarding</span>\n                        </label>\n                                            <label class=\"flex items-center gap-2 text-body-sm py-1 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"facility_id[]\" value=\"5\"\n                                \n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            <img src=\"http://127.0.0.1:8000/images/logo.svg\" alt=\"Reschedule Fleksibel\" class=\"w-4 h-4 object-contain\">\n                            <span>Reschedule Fleksibel</span>\n                        </label>\n                                            <label class=\"flex items-center gap-2 text-body-sm py-1 text-on-surface hover:text-primary transition-colors\">\n                            <input type=\"checkbox\" name=\"facility_id[]\" value=\"6\"\n                                \n                                class=\"rounded border-border text-primary focus:ring-primary w-4 h-4\"\n                                onchange=\"document.getElementById('filter-form').submit()\">\n                            <img src=\"http://127.0.0.1:8000/images/logo.svg\" alt=\"Wi-Fi Penerbangan\" class=\"w-4 h-4 object-contain\">\n                            <span>Wi-Fi Penerbangan</span>\n                        </label>\n                                    </div>\n\n                                    <div class=\"mt-2\">\n                        <a href=\"http://127.0.0.1:8000/flights?departure_id=1&amp;arrival_id=2&amp;date=2026-06-26&amp;passengers=1\"\n                            class=\"text-label-sm text-secondary hover:text-tertiary transition-colors\">Reset Filter</a>\n                    </div>\n</div>\n        </form>\n\n        \n        <div class=\"w-full lg:flex-1 space-y-4\">\n\n                            <div class=\"bg-surface border border-border rounded-lg shadow-sm p-8 text-center\">\n    <svg class=\"w-16 h-16 mx-auto mb-4 text-tertiary\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                        <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M12 19l9 2-9-18-9 18 9-2zm0 0v-8\"/>\n                    </svg>\n                    <p class=\"text-body-md text-tertiary\">Tidak ada penerbangan yang ditemukan untuk rute ini.</p>\n</div>\n\n            \n        </div>\n    </div>\n</div>\n            </main>\n        </div>\n\n        <!-- Global Toast Notifications Container -->\n        <div id=\"globalToastContainer\" class=\"fixed top-5 right-5 z-[100] flex flex-col gap-3 w-full max-w-sm pointer-events-none\"></div>\n\n        <!-- Global Confirmation Modal Container -->\n        <div \n            id=\"globalConfirmModal\" \n            class=\"fixed inset-0 z-[150] hidden items-center justify-center overflow-y-auto\"\n        >\n            <!-- Overlay -->\n            <div \n                onclick=\"window.closeGlobalConfirm()\" \n                class=\"fixed inset-0 bg-black/60 backdrop-blur-sm\"\n            ></div>\n\n            <!-- Modal Content -->\n            <div class=\"relative bg-surface rounded-2xl max-w-md w-full mx-4 p-6 shadow-2xl border border-border/80 z-10 space-y-6\">\n                <div class=\"flex items-start gap-4\">\n                    <!-- Alert Warning Icon -->\n                    <div class=\"shrink-0 w-10 h-10 rounded-full bg-rose-50 dark:bg-rose-950/30 flex items-center justify-center text-rose-600 dark:text-rose-400\">\n                        <svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z\"/></svg>\n                    </div>\n                    <div class=\"space-y-1\">\n                        <h3 id=\"globalConfirmTitle\" class=\"font-display text-headline-sm text-primary\">Konfirmasi</h3>\n                        <p id=\"globalConfirmMessage\" class=\"text-body-md text-tertiary\">Apakah Anda yakin?</p>\n                    </div>\n                </div>\n\n                <div class=\"flex justify-end gap-3\">\n                    <button \n                        onclick=\"window.closeGlobalConfirm()\"\n                        class=\"px-5 py-2.5 rounded-full border border-border text-on-surface hover:bg-neutral transition-colors text-label-lg font-semibold\"\n                    >\n                        Batal\n                    </button>\n                    <button \n                        id=\"globalConfirmBtn\"\n                        class=\"px-5 py-2.5 rounded-full bg-rose-600 hover:bg-rose-700 text-surface transition-colors text-label-lg font-semibold\"\n                    >\n                        Ya, Batalkan\n                    </button>\n                </div>\n            </div>\n        </div>\n\n        <script>\n            // Global Toast Notification function\n            window.showNotification = function(type, message) {\n                const container = document.getElementById('globalToastContainer');\n                if (!container) return;\n                const id = Date.now();\n                \n                let bgClass = '';\n                let iconSvg = '';\n                let progressBg = '';\n                \n                if (type === 'success') {\n                    bgClass = 'bg-emerald-50/95 border-emerald-200 text-emerald-800 dark:bg-emerald-950/95 dark:border-emerald-800 dark:text-emerald-200';\n                    iconSvg = '<svg class=\"w-5 h-5 text-emerald-600 dark:text-emerald-400\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\"/></svg>';\n                    progressBg = 'bg-emerald-500';\n                } else if (type === 'error' || type === 'danger') {\n                    bgClass = 'bg-rose-50/95 border-rose-200 text-rose-800 dark:bg-rose-950/95 dark:border-rose-800 dark:text-rose-200';\n                    iconSvg = '<svg class=\"w-5 h-5 text-rose-600 dark:text-rose-400\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z\"/></svg>';\n                    progressBg = 'bg-rose-500';\n                } else if (type === 'warning') {\n                    bgClass = 'bg-amber-50/95 border-amber-200 text-amber-800 dark:bg-amber-950/95 dark:border-amber-800 dark:text-amber-200';\n                    iconSvg = '<svg class=\"w-5 h-5 text-amber-600 dark:text-amber-400\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z\"/></svg>';\n                    progressBg = 'bg-amber-500';\n                } else {\n                    bgClass = 'bg-sky-50/95 border-sky-200 text-sky-800 dark:bg-sky-950/95 dark:border-sky-800 dark:text-sky-200';\n                    iconSvg = '<svg class=\"w-5 h-5 text-sky-600 dark:text-sky-400\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"/></svg>';\n                    progressBg = 'bg-sky-500';\n                }\n\n                const toast = document.createElement('div');\n                toast.id = `toast-${id}`;\n                toast.className = `relative flex gap-3 p-4 rounded-xl border shadow-lg backdrop-blur-md pointer-events-auto overflow-hidden transition-all duration-300 transform translate-x-full opacity-0 ${bgClass}`;\n                toast.innerHTML = `\n                    <div class=\"shrink-0\">${iconSvg}</div>\n                    <div class=\"flex-1\">\n                        <p class=\"text-sm font-semibold leading-5\">${message}</p>\n                    </div>\n                    <button onclick=\"document.getElementById('toast-${id}').remove()\" class=\"shrink-0 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors\">\n                        <svg class=\"w-4 h-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\"/></svg>\n                    </button>\n                    <div class=\"absolute bottom-0 left-0 h-1 ${progressBg}\" style=\"width: 100%; transition: width 5000ms linear;\"></div>\n                `;\n                \n                container.appendChild(toast);\n                \n                setTimeout(() => {\n                    toast.classList.remove('translate-x-full', 'opacity-0');\n                    toast.classList.add('translate-x-0', 'opacity-100');\n                    const progress = toast.querySelector('div:last-child');\n                    if (progress) progress.style.width = '0%';\n                }, 50);\n                \n                setTimeout(() => {\n                    if (document.getElementById(`toast-${id}`)) {\n                        toast.classList.remove('translate-x-0', 'opacity-100');\n                        toast.classList.add('translate-x-full', 'opacity-0');\n                        setTimeout(() => toast.remove(), 300);\n                    }\n                }, 5000);\n            };\n\n            // Global Confirmation Modal function\n            let globalConfirmCallback = null;\n\n            window.showConfirm = function(title, message, callback) {\n                document.getElementById('globalConfirmTitle').textContent = title;\n                document.getElementById('globalConfirmMessage').textContent = message;\n                globalConfirmCallback = callback;\n                \n                const modal = document.getElementById('globalConfirmModal');\n                modal.classList.remove('hidden');\n                modal.classList.add('flex');\n            };\n\n            window.closeGlobalConfirm = function() {\n                const modal = document.getElementById('globalConfirmModal');\n                modal.classList.remove('flex');\n                modal.classList.add('hidden');\n                globalConfirmCallback = null;\n            };\n\n            document.getElementById('globalConfirmBtn').addEventListener('click', () => {\n                if (globalConfirmCallback) {\n                    globalConfirmCallback();\n                }\n                window.closeGlobalConfirm();\n            });\n\n            // Trigger session alerts automatically on page load\n            document.addEventListener('DOMContentLoaded', () => {\n                                                            });\n        </script>\n\n        <script src=\"http://127.0.0.1:8000/livewire-8ab57b58/livewire.js?id=4735e441\"   data-csrf=\"s9I7BpFZgR94mXn1lFFM1VcHQtmeimXTE3M5t0BE\" data-module-url=\"http://127.0.0.1:8000/livewire-8ab57b58\" data-update-uri=\"http://127.0.0.1:8000/livewire-8ab57b58/update\" data-navigate-once=\"true\"></script>\n            </body>\n</html>\n"
+      tags:
+        - Pencarian
+      security: []
+  /profile:
+    get:
+      summary: 'Form Profil Pengguna'
+      operationId: formProfilPengguna
+      description: 'Menampilkan halaman formulir untuk mengubah informasi profil pengguna yang sedang masuk.'
+      parameters: []
+      responses:
+        302:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"refresh\" content=\"0;url='http://127.0.0.1:8000/login'\" />\n\n        <title>Redirecting to http://127.0.0.1:8000/login</title>\n    </head>\n    <body>\n        Redirecting to <a href=\"http://127.0.0.1:8000/login\">http://127.0.0.1:8000/login</a>.\n    </body>\n</html>"
+      tags:
+        - Profil
+      security: []
+    patch:
+      summary: 'Perbarui Profil Pengguna'
+      operationId: perbaruiProfilPengguna
+      description: 'Memperbarui informasi profil pengguna yang sedang masuk (nama dan email).'
+      parameters: []
+      responses: {  }
+      tags:
+        - Profil
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Nama lengkap pengguna.'
+                  example: 'John Doe'
+                email:
+                  type: string
+                  description: 'Alamat email pengguna.'
+                  example: john@example.com
+              required:
+                - name
+                - email
+      security: []
+    delete:
+      summary: 'Hapus Akun Pengguna'
+      operationId: hapusAkunPengguna
+      description: 'Menghapus akun pengguna yang sedang masuk dari sistem secara permanen.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Profil
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  description: 'Password saat ini untuk konfirmasi penghapusan.'
+                  example: password
+              required:
+                - password
+      security: []
+  /promo/check:
+    get:
+      summary: 'Cek Kode Promo'
+      operationId: cekKodePromo
+      description: 'Memvalidasi ketersediaan dan nilai potongan harga dari kode promo.'
+      parameters:
+        -
+          in: query
+          name: code
+          description: 'Kode promo.'
+          example: GARUDA10
+          required: true
+          schema:
+            type: string
+            description: 'Kode promo.'
+            example: GARUDA10
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  valid: true
+                  label: 'Diskon 10%'
+                  discount_type: percentage
+                  discount: 10
+                properties:
+                  valid:
+                    type: boolean
+                    example: true
+                  label:
+                    type: string
+                    example: 'Diskon 10%'
+                  discount_type:
+                    type: string
+                    example: percentage
+                  discount:
+                    type: integer
+                    example: 10
+      tags:
+        - Promosi
+      security: []

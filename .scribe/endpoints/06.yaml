@@ -1,0 +1,797 @@
+name: 'Pemesanan Tiket'
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'flight/{flight_flight_number}/choose-tier'
+    metadata:
+      custom: []
+      groupName: 'Pemesanan Tiket'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Pilih Kelas Penerbangan'
+      description: 'Menampilkan pilihan kelas penerbangan (Economy, Business, dll.) beserta harga dan fasilitas masing-masing.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      flight_flight_number:
+        custom: []
+        name: flight_flight_number
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      flight:
+        custom: []
+        name: flight
+        description: 'Nomor penerbangan.'
+        required: true
+        example: GA-401
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      flight_flight_number: 1
+      flight: GA-401
+    queryParameters:
+      passengers:
+        custom: []
+        name: passengers
+        description: 'Jumlah penumpang.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      passengers: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 302
+        content: |-
+          <!DOCTYPE html>
+          <html>
+              <head>
+                  <meta charset="UTF-8" />
+                  <meta http-equiv="refresh" content="0;url='http://127.0.0.1:8000/login'" />
+
+                  <title>Redirecting to http://127.0.0.1:8000/login</title>
+              </head>
+              <body>
+                  Redirecting to <a href="http://127.0.0.1:8000/login">http://127.0.0.1:8000/login</a>.
+              </body>
+          </html>
+        headers:
+          cache-control: 'no-cache, private'
+          location: 'http://127.0.0.1:8000/login'
+          content-type: 'text/html; charset=utf-8'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkhQR01mc0lKOVVOS1drenVKM1dOamc9PSIsInZhbHVlIjoiV1lWK0hiS2lPNjdzVDc2T2FkUVpMNlc1YXpJZTRaL0h0VmxmRGlYOVlYWG0weTFYZWJoMHNqR2NBS3c5eStpQWZBaUFLRHA1eXdCaVpaL2tuZDZ0WnRsVGdGQ3JKc3VaNTB6V2x3ZHVXcUl5NjRaY3gzdkF0bU1ZTGllYnYwdXAiLCJtYWMiOiI5MWM3Y2JiNjM0MzVmYzM2ZWQxMjIwMzNlMzM1NmFmNjg4MzEzOWZhNjE5Y2EwYTk0NmRmYjNkZmI3NmI3MGM2IiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; samesite=lax; garuda-session=eyJpdiI6IllnL09sM2d2YWRQOFdTTUNqSXhjc1E9PSIsInZhbHVlIjoia2lQcXYwcWcrTHVXNXpKSDF2ejJReWIvdloyWG1jbjlwYkRDRDFYZFFndng4akMrd1JtZFZKY3huVncxc01ObWNWR1BhWFNoRVMzVUJLZEsrQXhYd3lYNjZoY1RIWDFLR05IUEhpWjUxR0NTVVNnUUVNOUV5eWN4Vk0zQ1VMZ2MiLCJtYWMiOiJhNGIwMjRhNTU3NTc0OTIzOWIyZGY1MWVmODVmN2Q2NTcxYWE2YzUxMGNmMGU3ZmJhNDNlZDg4ZDZhNzlkZDE2IiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'flight/{flight_flight_number}/booking/{flightClass_id}/choose-seat'
+    metadata:
+      custom: []
+      groupName: 'Pemesanan Tiket'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Tampilkan Pemilihan Kursi'
+      description: 'Halaman untuk memilih kursi kosong pada penerbangan dan kelas yang dipilih.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      flight_flight_number:
+        custom: []
+        name: flight_flight_number
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      flightClass_id:
+        custom: []
+        name: flightClass_id
+        description: 'The ID of the flightClass.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      flight:
+        custom: []
+        name: flight
+        description: 'Nomor penerbangan.'
+        required: true
+        example: GA-401
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      flightClass:
+        custom: []
+        name: flightClass
+        description: 'ID kelas penerbangan.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      flight_flight_number: 1
+      flightClass_id: 1
+      flight: GA-401
+      flightClass: 1
+    queryParameters:
+      passengers:
+        custom: []
+        name: passengers
+        description: 'Jumlah penumpang.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      passengers: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 302
+        content: |-
+          <!DOCTYPE html>
+          <html>
+              <head>
+                  <meta charset="UTF-8" />
+                  <meta http-equiv="refresh" content="0;url='http://127.0.0.1:8000/login'" />
+
+                  <title>Redirecting to http://127.0.0.1:8000/login</title>
+              </head>
+              <body>
+                  Redirecting to <a href="http://127.0.0.1:8000/login">http://127.0.0.1:8000/login</a>.
+              </body>
+          </html>
+        headers:
+          cache-control: 'no-cache, private'
+          location: 'http://127.0.0.1:8000/login'
+          content-type: 'text/html; charset=utf-8'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IndLZ3o3YkUzNXRMWEJCc0QwOGdIdGc9PSIsInZhbHVlIjoiRG9UcFI0QjQxVVZCQWtkbGZqakI3eVl2RDduL0lrcGdDRTdueGxyOWVDbndOQWtJbW9KMDZuM3Q3WHcwWFB2eXozemtjTmJadVRCeW5BU1IzWVlZVUEwamwzYytBV01rZ2NHRjhLUlBGdDhIVXcrRllqUC92TkJGa1BJemJqQ3kiLCJtYWMiOiI5OWEzOWQyNDFkMjg0MDIzNTRjMzVjYzY0NzhkZjI5YWE2Mjg1NTczZjE0MmFkNDE4MzExMjE5YTk0ZTBhYjZjIiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; samesite=lax; garuda-session=eyJpdiI6IjFnNGtWK3RKU1Q2cmJHQmt2akhjR1E9PSIsInZhbHVlIjoiakVNdWlyREphVEJGUCtxSENOQVZMbVoxQ2V1QmF4aSszZDFxdm9uU2lVM0NwVGVZblhSa01NTGY4MDZINnlJT3c3Qi91RFVKZ052Y2pLQ3Z4Ylg3aGJYWmJaUDdaaEd3YnBzRzN5aVUrQm5TVDhleGJBc0VoME9OUm5BSHAwdFAiLCJtYWMiOiI4MzFmMjdmZTcxN2IyNmQ3MTk2MjZmMDYxNzU0ZTkxZjAyMGU3Y2Q5NTMyYTk0ZTE4M2Y1YWRlNDFlNTY4OWRkIiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: booking/create
+    metadata:
+      custom: []
+      groupName: 'Pemesanan Tiket'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Form Pengisian Data Penumpang'
+      description: 'Halaman formulir untuk memasukkan informasi penumpang setelah memilih kursi.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      flight_id:
+        custom: []
+        name: flight_id
+        description: 'ID penerbangan.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      flight_class_id:
+        custom: []
+        name: flight_class_id
+        description: 'ID kelas penerbangan.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      passengers:
+        custom: []
+        name: passengers
+        description: 'Jumlah penumpang.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      seats:
+        custom: []
+        name: seats
+        description: 'Daftar nama kursi yang dipilih (dipisahkan koma).'
+        required: true
+        example: GA-401-1A
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      flight_id: 1
+      flight_class_id: 1
+      passengers: 1
+      seats: GA-401-1A
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '(HTML View) Halaman pengisian form pemesanan'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: booking/store
+    metadata:
+      custom: []
+      groupName: 'Pemesanan Tiket'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Simpan Transaksi Pemesanan'
+      description: 'Menyimpan transaksi pemesanan baru ke database dan memesan kursi.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      flight_id:
+        custom: []
+        name: flight_id
+        description: 'ID penerbangan.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      flight_class_id:
+        custom: []
+        name: flight_class_id
+        description: 'ID kelas penerbangan.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      name:
+        custom: []
+        name: name
+        description: 'Nama lengkap pemesan.'
+        required: true
+        example: 'Ayu Traveler'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      email:
+        custom: []
+        name: email
+        description: 'Email pemesan untuk pengiriman e-ticket.'
+        required: true
+        example: ayu@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      phone:
+        custom: []
+        name: phone
+        description: 'Nomor telepon pemesan.'
+        required: true
+        example: '08123456789'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      number_of_passengers:
+        custom: []
+        name: number_of_passengers
+        description: 'Jumlah penumpang (1-9).'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      passengers:
+        custom: []
+        name: passengers
+        description: 'Daftar data penumpang.'
+        required: true
+        example:
+          - architecto
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      promo_code:
+        custom: []
+        name: promo_code
+        description: 'Kode promo (opsional).'
+        required: false
+        example: GARUDA10
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      'passengers[].seat_id':
+        custom: []
+        name: 'passengers[].seat_id'
+        description: 'ID kursi untuk penumpang tersebut.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      'passengers[].name':
+        custom: []
+        name: 'passengers[].name'
+        description: 'Nama lengkap penumpang.'
+        required: true
+        example: 'Ayu Traveler'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      'passengers[].dob':
+        custom: []
+        name: 'passengers[].dob'
+        description: 'Tanggal lahir penumpang (Y-m-d).'
+        required: true
+        example: '1995-01-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      'passengers[].nationality':
+        custom: []
+        name: 'passengers[].nationality'
+        description: 'Kewarganegaraan penumpang.'
+        required: true
+        example: Indonesia
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      flight_id: 1
+      flight_class_id: 1
+      name: 'Ayu Traveler'
+      email: ayu@example.com
+      phone: '08123456789'
+      number_of_passengers: 1
+      passengers:
+        - architecto
+      promo_code: GARUDA10
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 302
+        content: 'Redirect ke halaman pembayaran'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: booking/check
+    metadata:
+      custom: []
+      groupName: 'Pemesanan Tiket'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Cek Booking via Kode'
+      description: 'Mencari rincian pemesanan berdasarkan kode booking unik.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      code:
+        custom: []
+        name: code
+        description: 'Kode booking (contoh: GRD-XXXX).'
+        required: true
+        example: GRD-ABCDEF12
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      code: GRD-ABCDEF12
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 302
+        content: 'Redirect ke halaman rincian transaksi'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 302
+        content: |-
+          <!DOCTYPE html>
+          <html>
+              <head>
+                  <meta charset="UTF-8" />
+                  <meta http-equiv="refresh" content="0;url='http://127.0.0.1:8000/login'" />
+
+                  <title>Redirecting to http://127.0.0.1:8000/login</title>
+              </head>
+              <body>
+                  Redirecting to <a href="http://127.0.0.1:8000/login">http://127.0.0.1:8000/login</a>.
+              </body>
+          </html>
+        headers:
+          cache-control: 'no-cache, private'
+          location: 'http://127.0.0.1:8000/login'
+          content-type: 'text/html; charset=utf-8'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6Ikg0QmVuZjJFOGk3bXpiSFBnZmxzUUE9PSIsInZhbHVlIjoiQ24vbGVQL0hsakxySmdJa2lmRmVkbXQ5dC8rYUZYd1BlbURuUk9zWFFpV2dySnEyT3I4ajJCVXJ4Q3BvaUZ1N0g1NDZXSHM4SCtmTTFycXB1K3kwNzVxeTdOc3c3WG1xaGRvUG1WNTVRZW8vNXF5ZUVwYVlqZm9ybVNvQjRvbCsiLCJtYWMiOiIzNzJjMzU1YWYzYTM4OTVkYzNkMzU4OWU3Y2NhMzNjNTBhMjUxYjliMzU5ZjNiZDBjODg3ZTM2M2I5Y2Q2NjM4IiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; samesite=lax; garuda-session=eyJpdiI6IjRqNGc5Wit4S3pwZHJaNENReGFXaFE9PSIsInZhbHVlIjoiNE5aZWN2Tk9NSEJoUGtYVUtlVE9ZM1lQblJYRHhxV0tXdkhSSU9lS3JCdGhHd24zNm1WU1Ixd2xxa3B2S1ZVZnh3eHRiODNZOENCSVduY0FQRjZnNHU4NGcrQ2ZLcGF2TEVLWVFSMUVHV25vK0E0akJMUWM0dk5CS3NLRUMxNzAiLCJtYWMiOiIxMWYxNjAxMzc2NTM4YzMzMDg2NTdlZTk3M2FhYzcyZTFjY2Q0Yjk1YWYzYzk5MTJhMGM4NDcxZTQxYWMxYzA3IiwidGFnIjoiIn0%3D; expires=Sat, 27 Jun 2026 13:45:20 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'booking/{transaction_id}'
+    metadata:
+      custom: []
+      groupName: 'Pemesanan Tiket'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Detail Transaksi Pemesanan'
+      description: 'Menampilkan informasi rincian pemesanan beserta status dan e-ticket (jika lunas).'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      transaction_id:
+        custom: []
+        name: transaction_id
+        description: 'The ID of the transaction.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      transaction:
+        custom: []
+        name: transaction
+        description: 'ID transaksi.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      transaction_id: 1
+      transaction: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '(HTML View) Halaman rincian pemesanan'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: 'booking/{transaction_id}/cancel'
+    metadata:
+      custom: []
+      groupName: 'Pemesanan Tiket'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Batalkan Pemesanan'
+      description: 'Membatalkan transaksi pemesanan yang masih pending (belum dibayar).'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      transaction_id:
+        custom: []
+        name: transaction_id
+        description: 'The ID of the transaction.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      transaction:
+        custom: []
+        name: transaction
+        description: 'ID transaksi.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      transaction_id: 1
+      transaction: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 302
+        content: 'Redirect ke halaman riwayat pesanan'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: my-bookings
+    metadata:
+      custom: []
+      groupName: 'Pemesanan Tiket'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Riwayat Pemesanan Pengguna'
+      description: 'Menampilkan daftar seluruh transaksi/pemesanan tiket dari pengguna yang login.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '(HTML View) Halaman daftar seluruh riwayat pemesanan pelanggan'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: ajax/seats
+    metadata:
+      custom: []
+      groupName: 'Pemesanan Tiket'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Polling Ketersediaan Kursi (AJAX)'
+      description: 'Memeriksa daftar seluruh kursi beserta status ketersediaannya secara real-time.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      flight_id:
+        custom: []
+        name: flight_id
+        description: 'ID penerbangan.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      class_type:
+        custom: []
+        name: class_type
+        description: 'Tipe kelas (economy, business).'
+        required: true
+        example: economy
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      flight_id: 1
+      class_type: economy
+    bodyParameters:
+      flight_id:
+        custom: []
+        name: flight_id
+        description: 'Must match an existing stored value.'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      class_type:
+        custom: []
+        name: class_type
+        description: ''
+        required: true
+        example: business
+        type: string
+        enumValues:
+          - economy
+          - business
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      flight_id: architecto
+      class_type: business
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "seats": [
+              {
+                "id": 1,
+                "name": "1A",
+                "available": true,
+                "row": 1,
+                "column": "A"
+              }
+            ]
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
